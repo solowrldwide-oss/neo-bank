@@ -207,3 +207,41 @@ button:hover{
 .grid a:hover{
     transform:scale(1.05);
 }
+.error{
+    color:red;
+    font-size:12px;
+}
+
+/* LOADER */
+.loader{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    color:white;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+/* CHART */
+.chart-box{
+    background:white;
+    padding:15px;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+.bar, .bar2, .bar3{
+    height:10px;
+    background:#0a6b3e;
+    margin:8px 0;
+    border-radius:5px;
+}
+
+.bar{width:80%}
+.bar2{width:60%}
+.bar3{width:40%}
