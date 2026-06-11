@@ -82,3 +82,6 @@ button{
 
     cursor:pointer;
 }
+body {
+  background: red;
+}
