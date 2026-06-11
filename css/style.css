@@ -1,29 +1,55 @@
-body{
+*{
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif;
-    background:#f4f6f8;
+    box-sizing:border-box;
 }
 
-.login-container{
+body{
+    font-family:Arial,sans-serif;
+}
+
+.hero{
+    width:100%;
+    height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+    width:100%;
+    height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
 }
 
 .login-card{
     width:90%;
-    max-width:350px;
+    max-width:400px;
+
     background:white;
-    padding:30px;
+
+    padding:35px;
+
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.2);
 }
 
 .login-card h1{
     text-align:center;
     color:#0a6b3e;
+    margin-bottom:10px;
 }
 
 .subtitle{
@@ -37,16 +63,22 @@ input{
     padding:15px;
     margin-bottom:15px;
     border:1px solid #ddd;
-    border-radius:10px;
-    box-sizing:border-box;
+    border-radius:12px;
 }
 
 button{
     width:100%;
     padding:15px;
+
     background:#0a6b3e;
+
     color:white;
+
     border:none;
-    border-radius:10px;
+
+    border-radius:12px;
+
     font-size:16px;
+
+    cursor:pointer;
 }
