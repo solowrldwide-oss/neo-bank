@@ -11,15 +11,31 @@ function login(){
     let password = document.getElementById("password").value;
     let error = document.getElementById("error");
 
+    // ✅ your allowed credentials
+    const validEmail = "thanerivers@gmail.com";
+    const validPassword = "Incredibleman";
+
+    // check empty fields
     if(!email || !password){
-        error.innerText = "Fill all fields";
+        error.innerText = "Please fill all fields";
         return;
     }
 
-    if(!email.includes("@")){
-        error.innerText = "Invalid email";
-        return;
+    // check credentials
+    if(email === validEmail && password === validPassword){
+
+        localStorage.setItem("neoUser", email);
+
+        document.getElementById("loader").style.display = "block";
+
+        setTimeout(()=>{
+            window.location.href = "dashboard.html";
+        },1500);
+
+    } else {
+        error.innerText = "Invalid credentials";
     }
+}
 
     // SAVE SESSION
     localStorage.setItem("neoUser", email);
