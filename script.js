@@ -61,3 +61,11 @@ function toggleBalance(){
 function notify(){
     alert("New transaction received!");
 }
+function deposit(amount){
+    let balance = document.getElementById("balance");
+
+    let current = 250000000;
+    current += amount;
+
+    balance.innerText = "$" + current.toLocaleString();
+}
