@@ -286,3 +286,36 @@ button:hover{
 .bar{width:80%}
 .bar2{width:60%}
 .bar3{width:40%}
+.card{
+    background:linear-gradient(
+        135deg,
+        #0a6b3e,
+        #13a35d
+    );
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.eye-btn{
+    width:auto;
+    padding:8px 12px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:#0a6b3e;
+}
+
+.copy-btn{
+    width:auto;
+    margin-top:15px;
+    background:white;
+    color:#0a6b3e;
+    font-weight:bold;
+}
+
+.account-number{
+    margin-top:10px;
+    opacity:0.9;
+}
