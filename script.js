@@ -1,8 +1,28 @@
 function login(){
-    window.location.href = "dashboard.html";
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+    if(email === "" || password === ""){
+        error.innerText = "Please fill all fields";
+        return;
+    }
+
+    if(!email.includes("@")){
+        error.innerText = "Enter a valid email";
+        return;
+    }
+
+    // SHOW LOADER
+    document.getElementById("loader").style.display = "block";
+
+    setTimeout(()=>{
+        window.location.href = "dashboard.html";
+    },2000);
 }
 
-/* BALANCE TOGGLE */
+/* BALANCE */
 function toggleBalance(){
     const balance = document.getElementById("balance");
 
@@ -13,7 +33,7 @@ function toggleBalance(){
     }
 }
 
-/* SIDEBAR TOGGLE */
+/* SIDEBAR */
 function toggleMenu(){
     document.getElementById("sidebar").classList.toggle("hide");
 }
