@@ -5,13 +5,48 @@ body{
     background:#f4f6f8;
 }
 
-h1{
-    text-align:center;
-    margin-top:100px;
-    color:#0d6b3d;
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-p{
+.login-card{
+    width:90%;
+    max-width:350px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-card h1{
     text-align:center;
-    color:#666;
+    color:#0a6b3e;
+}
+
+.subtitle{
+    text-align:center;
+    color:gray;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#0a6b3e;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
 }
