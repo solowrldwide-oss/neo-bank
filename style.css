@@ -4,30 +4,84 @@ body{
     background:#f4f6f8;
 }
 
-.login-box{
-    width:90%;
-    max-width:350px;
-    margin:120px auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+/* LAYOUT */
+.layout{
+    display:flex;
+    min-height:100vh;
 }
 
-input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-
-button{
-    width:100%;
-    padding:12px;
+/* SIDEBAR */
+.sidebar{
+    width:220px;
     background:#0a6b3e;
     color:white;
-    border:none;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:10px 0;
+    opacity:0.9;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:20px;
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* CARD */
+.card{
+    background:#0a6b3e;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    margin:20px 0;
+}
+
+.balance-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.grid div{
+    background:white;
+    padding:15px;
+    text-align:center;
     border-radius:10px;
+}
+
+/* TRANSACTIONS */
+.transactions{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+.tx{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
 }
