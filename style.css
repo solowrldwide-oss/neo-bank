@@ -85,3 +85,22 @@ body{
     padding:10px 0;
     border-bottom:1px solid #eee;
 }
+.grid a{
+    background:white;
+    padding:18px;
+    text-align:center;
+    border-radius:12px;
+    text-decoration:none;
+    color:#0a6b3e;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.grid a:hover{
+    transform:scale(1.05);
+}
+
+.sidebar a i,
+.grid a i{
+    margin-right:8px;
+}
