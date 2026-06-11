@@ -45,19 +45,25 @@ checkAuth();
         <!-- BALANCE CARD -->
         <div class="card">
 
-            <p>Total Balance</p>
+    <p>Total Balance</p>
 
-            <div class="balance-row">
-                <h1 id="balance"></h1>
-                <button onclick="toggleBalance()">👁</button>
-            </div>
-            <script>
-document.getElementById("balance").innerText = "$250,000,000.00";
-</script>
-    
+    <div class="balance-row">
+        <h1 id="balance">$250,000,000.00</h1>
 
-            <small>Account: 7963064085</small>
-        </div>
+        <button class="eye-btn" onclick="toggleBalance()">
+            👁
+        </button>
+    </div>
+
+    <p class="account-number">
+        Account: 7963064085
+    </p>
+
+    <button class="copy-btn">
+        Copy Account Number
+    </button>
+
+</div>
 
         <!-- QUICK ACTIONS -->
         <h3>Quick Actions</h3>
