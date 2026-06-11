@@ -1,76 +1,52 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-.container {
-  text-align: center;
-  width: 100%;
-  padding: 20px;
+.login-card{
+    width:90%;
+    max-width:350px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.login-card h1{
+    text-align:center;
+    color:#0a6b3e;
 }
 
-p {
-  opacity: 0.7;
-  margin-bottom: 25px;
+.subtitle{
+    text-align:center;
+    color:gray;
+    margin-bottom:25px;
 }
 
-/* Card style login box */
-.login-box {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 25px;
-  border-radius: 16px;
-  max-width: 350px;
-  margin: 0 auto;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    box-sizing:border-box;
 }
 
-/* Inputs */
-input {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: rgba(255,255,255,0.1);
-  color: white;
-}
-
-input::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-
-/* Button */
-button {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #3b82f6;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
+button{
+    width:100%;
+    padding:15px;
+    background:#0a6b3e;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
 }
