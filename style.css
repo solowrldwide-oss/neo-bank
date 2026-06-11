@@ -374,3 +374,16 @@ button:hover{
 .withdrawal b{
     color:#dc2626;
 }
+.tx small{
+    color:#666;
+}
+
+.status-completed{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.status-pending{
+    color:#f59e0b;
+    font-weight:bold;
+}
