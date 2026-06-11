@@ -9,11 +9,18 @@ function login(){
 
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    let error = document.getElementById("error");
 
-    // ✅ your allowed credentials
-    const validEmail = "thanerivers@gmail.com";
-    const validPassword = "Incredibleman";
+    if(email === "thanerivers@gmail.com" &&
+       password === "Incredibleman"){
+
+        window.location.href = "dashboard.html";
+
+    } else {
+
+        alert("Invalid credentials");
+
+    }
+}
 
     // check empty fields
     if(!email || !password){
