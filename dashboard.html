@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>NEO BANK Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="dashboard">
+<div class="layout">
 
-    <h2>NEO BANK</h2>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>NEO BANK</h2>
 
-    <div class="card">
-        <p>Total Balance</p>
-
-        <h1 id="balance">$250,000,000.00</h1>
-
-        <button onclick="toggle()">👁</button>
+        <a href="#">Dashboard</a>
+        <a href="#">Deposit</a>
+        <a href="#">Withdraw</a>
+        <a href="#">Transfer</a>
+        <a href="#">History</a>
+        <a href="#">Cards</a>
+        <a href="#">Pay Bills</a>
     </div>
 
-    <div class="grid">
+    <!-- MAIN -->
+    <div class="main">
 
-        <div>Deposit</div>
-        <div>Withdraw</div>
-        <div>Transfer</div>
-        <div>History</div>
-        <div>Crypto</div>
-        <div>Pay Bills</div>
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <h3>Welcome Back</h3>
+            <div class="icons">🔔 🌐 ☰</div>
+        </div>
+
+        <!-- BALANCE CARD -->
+        <div class="card">
+
+            <p>Total Balance</p>
+
+            <div class="balance-row">
+                <h1 id="balance">$250,000,000.00</h1>
+                <button onclick="toggleBalance()">👁</button>
+            </div>
+
+            <small>Account: 7963064085</small>
+        </div>
+
+        <!-- QUICK ACTIONS -->
+        <h3>Quick Actions</h3>
+
+        <div class="grid">
+            <div>Deposit</div>
+            <div>Withdraw</div>
+            <div>Transfer</div>
+            <div>History</div>
+            <div>Crypto</div>
+            <div>Cards</div>
+            <div>Pay Bills</div>
+            <div>Check Deposit</div>
+        </div>
+
+        <!-- TRANSACTIONS -->
+        <h3>Recent Transactions</h3>
+
+        <div class="transactions">
+
+            <div class="tx">
+                <span>Cash Deposit</span>
+                <b>+ $250,000,000.00</b>
+            </div>
+
+            <div class="tx">
+                <span>ATM Withdrawal</span>
+                <b>- $500.00</b>
+            </div>
+
+            <div class="tx">
+                <span>Transfer</span>
+                <b>- $1,200.00</b>
+            </div>
+
+        </div>
 
     </div>
 
