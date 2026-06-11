@@ -11,16 +11,16 @@
 <div class="layout">
 
     <!-- SIDEBAR -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
+
     <h2>NEO BANK</h2>
 
-    <a href="#"><i class="fa fa-grid"></i> Dashboard</a>
-    <a href="deposit.html"><i class="fa fa-arrow-down"></i> Deposit</a>
-    <a href="withdraw.html"><i class="fa fa-arrow-up"></i> Withdraw</a>
-    <a href="transfer.html"><i class="fa fa-paper-plane"></i> Transfer</a>
-    <a href="history.html"><i class="fa fa-clock"></i> History</a>
-    <a href="#"><i class="fa fa-credit-card"></i> Cards</a>
-    <a href="#"><i class="fa fa-receipt"></i> Bills</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="deposit.html">Deposit</a>
+    <a href="withdraw.html">Withdraw</a>
+    <a href="transfer.html">Transfer</a>
+    <a href="history.html">History</a>
+
 </div>
 
     <!-- MAIN -->
@@ -28,9 +28,17 @@
 
         <!-- TOP BAR -->
         <div class="topbar">
-            <h3>Welcome Back</h3>
-            <div class="icons">🔔 🌐 ☰</div>
-        </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <h3>Welcome Back</h3>
+
+    <div class="top-icons">
+        <button onclick="toggleDark()">🌙</button>
+        <button onclick="notify()">🔔</button>
+    </div>
+
+</div>
 
         <!-- BALANCE CARD -->
         <div class="card">
@@ -86,7 +94,7 @@
     </div>
 
 </div>
-
+<div id="popup" class="popup">Transaction Successful ✅</div>
 <script src="script.js"></script>
 
 </body>
