@@ -428,3 +428,31 @@ function openConfirm(){
 function closeConfirm(){
     document.getElementById("confirmBox").style.display = "none";
 }
+function showBankLogo(){
+
+    let bank = document.getElementById("bank").value;
+
+    let logo = document.getElementById("bankLogo");
+
+    let logos = {
+
+        "Bank of America": "assets/banks/boa.png",
+        "Chase Bank": "assets/banks/chase.png",
+        "Wells Fargo": "assets/banks/wellsfargo.png",
+        "Citibank": "assets/banks/citibank.png",
+        "Capital One": "assets/banks/capitalone.png",
+        "PNC Bank": "assets/banks/pnc.png",
+        "Truist Bank": "assets/banks/truist.png",
+        "U.S. Bank": "assets/banks/usbank.png",
+        "TD Bank": "assets/banks/tdbank.png",
+        "HSBC": "assets/banks/hsbc.png"
+
+    };
+
+    if(logos[bank]){
+        logo.src = logos[bank];
+        logo.style.display = "block";
+    } else {
+        logo.style.display = "none";
+    }
+}
