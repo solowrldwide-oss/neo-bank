@@ -436,3 +436,164 @@ button:hover{
 .transactions{
     margin-top:14px;
 }
+/* ======================
+   RECENT TRANSACTIONS
+====================== */
+
+.transactions{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    margin-top:15px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+}
+.transactions h3{
+
+    font-size:32px;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+
+}
+.tx{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 0;
+
+    border-bottom:1px solid #f1f5f9;
+
+    transition:.3s;
+
+}
+.tx:hover{
+
+    transform:translateX(8px);
+
+}
+.tx-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+.tx-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+.tx-icon i{
+
+    font-size:28px;
+
+}
+.deposit-icon{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.withdraw-icon{
+
+    background:#fee2e2;
+
+    color:#ef4444;
+
+}
+
+.transfer-icon{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+.tx strong{
+
+    font-size:34px !important;
+
+    font-weight:900 !important;
+
+    color:#111827;
+
+    line-height:.tx small{
+
+    font-size:18px !important;
+
+    font-weight:700;
+
+    color:#6b7280;
+
+}
+.tx b{
+
+    font-size:28px;
+
+    font-weight:900;
+
+}
+ .deposit b{
+    color:#16a34a;
+}
+
+.withdrawal b{
+    color:#ef4444;
+}
+
+.transfer b{
+    color:#2563eb;
+}
+
+.tx{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+   
