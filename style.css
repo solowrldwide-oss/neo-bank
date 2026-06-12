@@ -93,7 +93,7 @@ button:hover{
 ====================== */
 
 .main{
-    padding:12px;
+    padding:10px;
 }
 
 /* ======================
@@ -114,14 +114,14 @@ button:hover{
 .card{
     background:linear-gradient(135deg,#0a6b3e,#14b86a);
     color:white;
-    padding:22px;
-    border-radius:24px;
-    margin:15px 0;
-    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    padding:24px;
+    border-radius:28px;
+    margin:12px 0;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
 #balance{
-    font-size:34px;
+    font-size:48px;
     font-weight:800;
     line-height:1.1;
 }
@@ -132,29 +132,35 @@ button:hover{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:15px;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:10px;
 }
 
 .grid a{
     background:white;
-    border-radius:16px;
-    padding:14px;
-    text-decoration:none;
-    color:#0a6b3e;
+    border-radius:18px;
+    padding:14px 8px;
+    min-height:100px;
+
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
-    gap:8px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    font-size:14px;
-    font-weight:600;
+    align-items:center;
+
+    gap:6px;
+
+    text-decoration:none;
+    color:#111;
+
+    font-size:16px;
+    font-weight:700;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .grid a i{
-    font-size:30px;
+    font-size:32px;
 }
 
 /* ======================
@@ -164,15 +170,15 @@ button:hover{
 .transactions{
     background:white;
     padding:18px;
-    border-radius:20px;
-    margin-top:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    border-radius:24px;
+    margin-top:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .tx{
     display:flex;
     justify-content:space-between;
-    padding:10px 4px;
+    padding:12px 0;
     border-bottom:1px solid #eee;
 }
 
@@ -199,8 +205,8 @@ button:hover{
 }
 
 .person{
-    min-width:65px;
-    height:65px;
+    min-width:70px;
+    height:70px;
     font-size:13px;
     border-radius:50%;
     background:linear-gradient(135deg,#0a6b3e,#14b86a);
@@ -254,12 +260,23 @@ button:hover{
     .grid{
         grid-template-columns:repeat(2,1fr);
     }
-}
-h1,
-h2,
-h3,
-h4{
+}h1{
+    font-size:34px;
     font-weight:800;
+}
+
+h2{
+    font-size:30px;
+    font-weight:800;
+}
+
+h3{
+    font-size:24px;
+    font-weight:800;
+}
+
+strong{
+    font-weight:700;
 }
 .card,
 .transactions,
@@ -274,4 +291,17 @@ p,small{
 
 .tx strong{
     font-size:15px;
+}
+p{
+    margin:4px 0;
+    line-height:1.25;
+}
+
+small{
+    font-size:13px;
+    color:#777;
+}
+
+body{
+    font-size:17px;
 }
