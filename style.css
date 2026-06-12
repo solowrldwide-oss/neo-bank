@@ -323,12 +323,13 @@ button:hover{
     gap:10px;
     margin-top:12px;
 }
-.grid a{
+..grid a{
     background:white;
     border-radius:18px;
 
-    padding:16px 6px;
-    min-height:110px;   /* BIGGER TILES */
+    padding:18px 6px;
+
+    aspect-ratio: 1 / 1;   /* 🔥 makes it square */
 
     display:flex;
     flex-direction:column;
@@ -346,10 +347,9 @@ button:hover{
 
     transition:0.2s ease;
 }
-
 .grid a i{
-    font-size:55px;
-    margin-bottom:10px;
+    font-size:48px;
+    margin-bottom:8px;
 }
 .grid a:hover{
 
@@ -636,19 +636,13 @@ button:hover{
     color:#2563eb;
 }
 @media(max-width:768px){
-
-    .grid{
-        grid-template-columns:repeat(4, 1fr);
-        gap:8px;
-    }
-
     .grid a{
-        min-height:95px;
+        aspect-ratio: 1 / 1;
         padding:12px 4px;
     }
 
     .grid a i{
-        font-size:42px;
+        font-size:38px;
     }
 
     .grid a span{
