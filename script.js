@@ -409,3 +409,22 @@ function generateBank(){
 
     }
 }
+function openConfirm(){
+
+    let account = document.getElementById("account").value;
+    let amount = document.getElementById("amount").value;
+
+    if(account === "" || amount === ""){
+        alert("Fill all fields");
+        return;
+    }
+
+    document.getElementById("confirmText").innerText =
+    `Send $${amount} to account ${account}?`;
+
+    document.getElementById("confirmBox").style.display = "flex";
+}
+
+function closeConfirm(){
+    document.getElementById("confirmBox").style.display = "none";
+}
