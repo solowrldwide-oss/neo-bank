@@ -247,9 +247,19 @@ function submitTransfer(){
     let amount =
     Number(document.getElementById("amount").value);
 
-    if(account === "" || amount === 0){
+    let pin =
+    document.getElementById("pin").value;
+
+    if(account === "" || amount === 0 || pin === ""){
 
         alert("Please fill all fields");
+        return;
+
+    }
+
+    if(pin !== "1234"){
+
+        alert("Incorrect PIN");
         return;
 
     }
@@ -268,37 +278,25 @@ function submitTransfer(){
 
         currentBalance -= amount;
 
-        localStorage.setItem(
-            "balance",
-            currentBalance
-        );
+        localStorage.setItem("balance", currentBalance);
 
         let txId =
-        "TX" + Math.floor(
-            Math.random()*1000000000
-        );
+        "TX" + Math.floor(Math.random()*1000000000);
 
         let history =
-        JSON.parse(
-            localStorage.getItem("history")
-        ) || [];
+        JSON.parse(localStorage.getItem("history")) || [];
 
         history.unshift({
 
             type:"Transfer",
-
             amount:amount,
-
+            account:account,
             txId:txId,
-
             time:new Date().toLocaleString()
 
         });
 
-        localStorage.setItem(
-            "history",
-            JSON.stringify(history)
-        );
+        localStorage.setItem("history", JSON.stringify(history));
 
         document.getElementById("loader").style.display =
         "none";
@@ -306,14 +304,12 @@ function submitTransfer(){
         document.getElementById("message").innerHTML =
 
         "✅ Transfer Successful<br><br>" +
-
         "Transaction ID:<br>" +
-
         txId;
 
     },3000);
-
 }
+
 function searchHistory(){
 
     let input =
@@ -367,6 +363,49 @@ function generateTransferName(){
     } else {
 
         document.getElementById("name").value = "";
+
+    }
+}
+function generateBank(){
+
+    let banks = [
+        "Bank of America",
+        "JPMorgan Chase",
+        "Wells Fargo",
+        "Citibank",
+        "U.S. Bank",
+        "Truist Bank",
+        "PNC Bank",
+        "Capital One",
+        "TD Bank",
+        "Citizens Bank",
+        "Huntington Bank",
+        "Regions Bank",
+        "Fifth Third Bank",
+        "KeyBank",
+        "Ally Bank",
+        "Discover Bank",
+        "American Express Bank",
+        "Morgan Stanley Bank",
+        "Goldman Sachs Bank USA",
+        "Charles Schwab Bank",
+        "BMO Harris Bank",
+        "First Citizens Bank",
+        "Synchrony Bank",
+        "HSBC Bank USA"
+    ];
+
+    let account =
+    document.getElementById("account").value;
+
+    if(account.length === 10){
+
+        document.getElementById("bank").value =
+        banks[Math.floor(Math.random() * banks.length)];
+
+    } else {
+
+        document.getElementById("bank").value = "";
 
     }
 }
