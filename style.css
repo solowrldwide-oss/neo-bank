@@ -1,20 +1,24 @@
 /* ======================
-   GLOBAL (MOBILE FIRST)
+   GLOBAL
 ====================== */
 
-body{
+*{
     margin:0;
-    font-family:'Poppins', Arial, sans-serif;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    background:
-    linear-gradient(
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(
         180deg,
-        #f7fafc 0%,
-        #eef6f1 50%,
-        #f4f6f8 100%
+        #f7fafc,
+        #eef6f1,
+        #f4f6f8
     );
-
+    color:#111827;
     min-height:100vh;
+    font-size:18px;
 }
 
 /* ======================
@@ -22,45 +26,43 @@ body{
 ====================== */
 
 .login-box{
-    width:90%;
-    max-width:400px;
-    margin:100px auto;
+    width:92%;
+    max-width:420px;
+    margin:80px auto;
     background:white;
-    padding:30px;
-    border-radius:22px;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    padding:35px;
+    border-radius:28px;
+    box-shadow:0 12px 35px rgba(0,0,0,.1);
 }
 
 .login-box h1{
+    font-size:40px;
+    font-weight:900;
     color:#0a6b3e;
-    font-size:26px;
+    margin-bottom:10px;
 }
-
-/* ======================
-   INPUTS + BUTTONS
-====================== */
 
 input{
     width:100%;
-    padding:14px;
-    margin:10px 0;
+    padding:18px;
     border:1px solid #ddd;
-    border-radius:12px;
-    font-size:15px;
-    box-sizing:border-box;
+    border-radius:16px;
+    margin-top:15px;
+    font-size:18px;
 }
 
 button{
     width:100%;
-    padding:14px;
+    padding:18px;
+    border:none;
+    border-radius:16px;
     background:#0a6b3e;
     color:white;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
+    font-size:19px;
+    font-weight:800;
+    margin-top:18px;
     cursor:pointer;
-    transition:0.2s;
+    transition:.3s;
 }
 
 button:hover{
@@ -68,19 +70,25 @@ button:hover{
 }
 
 /* ======================
-   LAYOUT (MOBILE STYLE)
+   LAYOUT
 ====================== */
 
 .layout{
     display:block;
 }
 
-/* REMOVE DESKTOP SIDEBAR FEEL */
+.main{
+    padding:15px;
+}
+
+/* ======================
+   SIDEBAR
+====================== */
+
 .sidebar{
     width:100%;
     background:#0a6b3e;
-    color:white;
-    padding:15px;
+    padding:18px;
     display:flex;
     justify-content:space-around;
     align-items:center;
@@ -93,16 +101,8 @@ button:hover{
 .sidebar a{
     color:white;
     text-decoration:none;
-    font-size:13px;
-    opacity:0.9;
-}
-
-/* ======================
-   MAIN AREA
-====================== */
-
-.main{
-    padding:10px;
+    font-size:17px;
+    font-weight:700;
 }
 
 /* ======================
@@ -113,23 +113,35 @@ button:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
 .topbar h2{
-    font-size:32px;
-    font-weight:800;
+    font-size:36px;
+    font-weight:900;
+}
+
+.top-icons button{
+    width:auto;
+    padding:12px 15px;
+    border-radius:14px;
 }
 
 /* ======================
-   BALANCE CARD (MOBILE BANK STYLE)
+   PREMIUM BALANCE CARD
 ====================== */
 
 .card{
-    background:linear-gradient(
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
         135deg,
         #0a6b3e,
-        #16c172,
+        #15b96c,
         #0a6b3e
     );
 
@@ -137,31 +149,35 @@ button:hover{
 
     color:white;
 
-    padding:25px;
+    padding:30px;
 
-    border-radius:30px;
+    border-radius:35px;
+
+    min-height:220px;
 
     box-shadow:
-    0 12px 30px rgba(0,0,0,.15);
-
-    position:relative;
-
-    overflow:hidden;
+    0 15px 40px rgba(0,0,0,.15);
 
     animation:gradientMove 8s infinite alternate;
+
 }
+
+/* Moving gradient */
 
 @keyframes gradientMove{
 
-    0%{
+    from{
         background-position:left;
     }
 
-    100%{
+    to{
         background-position:right;
     }
 
 }
+
+/* Floating circles */
+
 .card::before{
 
     content:"";
@@ -175,7 +191,7 @@ button:hover{
 
     background:rgba(255,255,255,.15);
 
-    top:-60px;
+    top:-70px;
     right:-40px;
 
 }
@@ -197,14 +213,15 @@ button:hover{
     left:-20px;
 
 }
-
 #balance{
 
-    font-size:54px;
+    font-size:60px;
 
-    font-weight:800;
+    font-weight:900;
 
-    letter-spacing:-2px;
+    letter-spacing:-3px;
+
+    margin-top:15px;
 
     animation:pulse 2s infinite alternate;
 
@@ -217,425 +234,82 @@ button:hover{
     }
 
     to{
-        transform:scale(1.02);
+        transform:scale(1.03);
     }
 
 }
 
-/* ======================
-   QUICK ACTIONS (MOBILE GRID)
-====================== */
+.account-number{
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+    margin-top:18px;
 
-    gap:10px;
-
-    margin-top:10px;
-}
-
-.grid a{
-    background:white;
-    border-radius:20px;
-    padding:14px 8px;
-    min-height:100px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    gap:6px;
-
-    text-decoration:none;
-    color:#111;
-
-    font-size:20px;
-    font-weight:900;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-}
-.grid a i{
-
-    font-size:55px;
-
-    transition:.3s;
-
-}
-/* ======================
-   TRANSACTIONS
-====================== */
-
-.transactions{
-    background:white;
-    padding:20px;
-    border-radius:30px;
-    margin-top:15px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-.tx{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:18px 0;
-
-    border-bottom:1px solid #f1f5f9;
-
-    transition:.3s;
-}
-
-.tx:hover{
-
-    transform:translateX(8px);
-
-}
-
-.tx:last-child{
-    border-bottom:none;
-}
-
-/* ======================
-   BENEFICIARIES
-====================== */
-
-.beneficiaries{
-    background:white;
-    padding:18px;
-    border-radius:25px;
-    margin-top:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
-
-.people{
-    display:flex;
-    gap:12px;
-    overflow-x:auto;
-}
-
-.person{
-    min-width:70px;
-    height:70px;
-    font-size:13px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#0a6b3e,#14b86a);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    flex-direction:column;
-}
-
-/* ======================
-   LOADER
-====================== */
-
-.loader{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.75);
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:999;
-    color:white;
-}
-
-/* ======================
-   MOBILE TUNING
-====================== */
-
-@media(max-width:768px){
-
-    #balance{
-        font-size:36px;
-    }
-}
-@media (max-width:768px){
-
-    .layout{
-        flex-direction:column;
-    }
-
-    .main{
-        padding:15px;
-    }
-
-    .grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}h1{
-    font-size:34px;
-    font-weight:800;
-}
-
-h2{
-    font-size:30px;
-    font-weight:800;
-}
-
-.transactions h3{
-    font-size:30px;
-    font-weight:900;
-    margin-bottom:20px;
-}
-
-strong{
-    font-weight:700;
-}
-.card,
-.transactions,
-.beneficiaries,
-.grid a{
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-}
-
-p,small{
-    line-height:1.3;
-}
-
-.tx strong{
-    font-size:15px;
-}
-p{
-    margin:4px 0;
-    line-height:1.25;
-}
-
-small{
-    font-size:13px;
-    color:#777;
-}
-
-body{
-    font-size:17px;
-}
-.card{
-    margin-bottom:12px;
-}
-
-.grid{
-    margin-top:8px;
-}
-
-.transactions{
-    margin-top:12px;
-}
-
-.beneficiaries{
-    margin-top:12px;
-}
-body{
     font-size:18px;
-}
 
-h1,
-h2,
-h3,
-h4{
-    font-weight:800;
-}
+    opacity:.9;
 
-strong{
-    font-weight:700;
-}
-
-p{
-    margin:3px 0;
-    line-height:1.2;
-}
-
-small{
-    font-size:13px;
-}
-.grid a:nth-child(1) i{
-    color:#16a34a;
-}
-
-.grid a:nth-child(2) i{
-    color:#2563eb;
-}
-
-.grid a:nth-child(3) i{
-    color:#dc2626;
-}
-
-.grid a:nth-child(4) i{
-    color:#f59e0b;
-}
-
-.grid a:nth-child(5) i{
-    color:#7c3aed;
-}
-
-.grid a:nth-child(6) i{
-    color:#ec4899;
-}
-
-.grid a:nth-child(7) i{
-    color:#0891b2;
-}
-
-.grid a:nth-child(8) i{
-    color:#ea580c;
-}
-.grid a{
-
-    transition:.3s;
-
-}
-
-.grid a:hover{
-
-    transform:
-    translateY(-5px);
-
-    box-shadow:
-    0 10px 20px rgba(0,0,0,.15);
-
-}
-.tx{
-
-    animation:fadeUp .5s ease;
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(10px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    letter-spacing:2px;
 
 }
 .eye-btn{
+
     width:auto;
-    padding:10px 14px;
+
+    padding:12px 15px;
+
     border:none;
-    border-radius:12px;
+
+    border-radius:15px;
+
     background:rgba(255,255,255,.2);
+
     color:white;
-    backdrop-filter:blur(10px);
+
+    backdrop-filter:blur(12px);
+
     transition:.3s;
+
 }
 
 .eye-btn:hover{
-    transform:rotate(15deg);
+
+    transform:rotate(20deg);
+
 }
 
 .eye-btn i{
-    font-size:18px;
-}
-.deposit b{
-    color:#22c55e;
-}
 
-.withdrawal b{
-    color:#ef4444;
-}
+    font-size:24px;
 
-.transfer b{
-    color:#2563eb;
 }
-.tx small{
-    font-size:18px;
-    color:#6b7280;
-    font-weight:600;
-}
-}
-.tx strong{
-    font-size:23px;
+.copy-btn{
+
+    width:auto;
+
+    margin-top:20px;
+
+    background:white;
+
+    color:#0a6b3e;
+
     font-weight:900;
-    color:#111827;
-    letter-spacing:-0.3px;
-}
-.tx{
 
-    animation:fadeUp .5s ease;
+    padding:14px 18px;
+
+    border-radius:15px;
 
 }
+.card-logo{
 
-@keyframes fadeUp{
+    position:absolute;
 
-    from{
+    bottom:20px;
 
-        opacity:0;
+    right:25px;
 
-        transform:translateY(15px);
+    font-size:38px;
 
-    }
+    font-weight:900;
 
-    to{
+    opacity:.9;
 
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-.tx-left{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.tx-icon{
-    width:55px;
-    height:55px;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.tx-icon i{
-    font-size:22px;
-}
-.transfer-icon{
-    background:#dbeafe;
-    color:#2563eb;
-}
-
-.deposit-icon{
-    background:#dcfce7;
-    color:#16a34a;
-}
-
-.withdraw-icon{
-    background:#fee2e2;
-    color:#dc2626;
-}
-.deposit b{
-    color:#16a34a;
-}
-
-.withdrawal b{
-    color:#dc2626;
-}
-
-.transfer b{
-    color:#2563eb;
-}
-.tx{
-    padding:20px 0;
 }
