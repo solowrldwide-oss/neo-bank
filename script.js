@@ -1,3 +1,6 @@
+let currentBalance =
+Number(localStorage.getItem("balance")) || 87641072.33;
+
 /* LOGIN */
 function login(){
 
