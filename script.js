@@ -314,3 +314,30 @@ function submitTransfer(){
     },3000);
 
 }
+function searchHistory(){
+
+    let input =
+    document.getElementById("search")
+    .value
+    .toLowerCase();
+
+    let tx =
+    document.querySelectorAll(".tx");
+
+    tx.forEach(function(item){
+
+        if(item.innerText
+        .toLowerCase()
+        .includes(input)){
+
+            item.style.display = "";
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+}
