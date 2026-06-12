@@ -440,101 +440,36 @@ function showBankLogo(){
 }
 function updateRecentTransactions(){
 
-    let history = JSON.parse(
-        localStorage.getItem("history")
-    ) || [];
+    let history =
+    JSON.parse(localStorage.getItem("history")) || [];
 
-    let recent =
-    document.getElementById(
-        "recentTransactions"
-    );
+    let container =
+    document.getElementById("recentTransactions");
 
-    if(!recent) return;
+    if(!container) return;
 
-    if(history.length === 0){
+    // ONLY add new transactions ABOVE existing ones
+    history.forEach(tx => {
 
-        recent.innerHTML = `
-        
-        <div class="tx deposit">
+        let div = document.createElement("div");
+        div.className = "tx";
+
+        div.innerHTML = `
             <div>
-                <strong>Cash Deposit</strong><br>
-                <small>Today • 09:12 AM • Completed</small>
-            </div>
-            <b>+$50,000,000.00</b>
-        </div>
-
-        <div class="tx withdrawal">
-            <div>
-                <strong>ATM Withdrawal</strong><br>
-                <small>Today • 10:35 AM • Completed</small>
-            </div>
-            <b>-$500.00</b>
-        </div>
-
-        <div class="tx transfer">
-            <div>
-                <strong>Transfer</strong><br>
-                <small>2:45 PM • Completed</small>
-            </div>
-            <b>-$2,500.00</b>
-        </div>
-
-        <div class="tx deposit">
-            <div>
-                <strong>Wire Transfer Received</strong><br>
-                <small>Today • 12:45 PM • Completed</small>
-            </div>
-            <b>+$15,500.00</b>
-        </div>
-
-        `;
-        return;
-    }
-
-    recent.innerHTML = "";
-
-    history.forEach(tx=>{
-
-        let sign = "+";
-
-        if(
-            tx.type==="Transfer" ||
-            tx.type==="Withdrawal"
-        ){
-            sign="-";
-        }
-
-        recent.innerHTML += `
-
-        <div class="tx">
-
-            <div>
-
                 <strong>${tx.type}</strong><br>
-
-                <small>
-                ${tx.time}
-                </small>
-
+                <small>${tx.time}</small>
             </div>
-
-            <b>
-            ${sign}$${Number(tx.amount)
-            .toLocaleString()}
-            </b>
-
-        </div>
-
+            <b>${tx.type === "Withdrawal" || tx.type === "Transfer"
+                ? "-" : "+"}$${Number(tx.amount).toLocaleString()}</b>
         `;
+
+        container.appendChild(div);
 
     });
 
 }
 window.onload = function(){
-
     checkAuth();
-
     updateRecentTransactions();
-
 }
 
