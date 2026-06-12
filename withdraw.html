@@ -1,79 +1,73 @@
-function submitWithdraw(){
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Withdraw Funds - NEO BANK</title>
 
-    let account =
-    document.getElementById("account").value;
+    <link rel="stylesheet" href="style.css">
 
-    let amount =
-    Number(document.getElementById("amount").value);
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-    if(account === "" || amount === 0){
+<body>
 
-        alert("Please fill all fields");
-        return;
+<div class="page">
 
-    }
+    <h2>
+        <i class="fa-solid fa-arrow-up"></i>
+        Withdraw Funds
+    </h2>
 
-    if(amount > currentBalance){
+    <input
+    type="text"
+    id="account"
+    placeholder="Account Number"
+    oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10); generateName(); generateBank();">
 
-        alert("Insufficient Funds");
-        return;
+    <input
+    type="text"
+    id="name"
+    placeholder="Recipient Name"
+    readonly>
 
-    }
+    <input
+    type="text"
+    id="bank"
+    placeholder="Bank Name"
+    readonly>
 
-    document.getElementById("loader").style.display =
-    "flex";
+    <input
+    type="text"
+    id="amount"
+    placeholder="Amount"
+    oninput="this.value=this.value.replace(/[^0-9]/g,'')">
 
-    setTimeout(function(){
+    <button onclick="submitWithdraw()">
+        Submit Withdrawal
+    </button>
 
-        currentBalance -= amount;
+    <p id="message"></p>
 
-        localStorage.setItem(
-            "balance",
-            currentBalance
-        );
+    <br>
 
-        // generate transaction id
-        let txId =
-        "TX" + Math.floor(
-            Math.random()*1000000000
-        );
+    <a href="dashboard.html">
+        ← Back to Dashboard
+    </a>
 
-        // save history
-        let history =
-        JSON.parse(
-            localStorage.getItem("history")
-        ) || [];
+</div>
 
-        history.unshift({
 
-            type:"Withdrawal",
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader">
 
-            amount:amount,
+    <div class="spinner"></div>
 
-            account:account,
+    <p>Processing Transaction...</p>
 
-            txId:txId,
+</div>
 
-            time:new Date().toLocaleString()
 
-        });
+<script src="script.js"></script>
 
-        localStorage.setItem(
-            "history",
-            JSON.stringify(history)
-        );
-
-        document.getElementById("loader").style.display =
-        "none";
-
-        document.getElementById("message").innerHTML =
-
-        "✅ Withdrawal Successful<br><br>" +
-
-        "Transaction ID:<br>" +
-
-        txId;
-
-    },3000);
-
-}
+</body>
+</html>
