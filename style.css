@@ -5,7 +5,16 @@
 body{
     margin:0;
     font-family:'Poppins', Arial, sans-serif;
-    background:#f4f6f8;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f7fafc 0%,
+        #eef6f1 50%,
+        #f4f6f8 100%
+    );
+
+    min-height:100vh;
 }
 
 /* ======================
