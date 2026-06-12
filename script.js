@@ -3,7 +3,6 @@ Number(localStorage.getItem("balance")) || 87641072.33;
 
 /* LOGIN */
 function login(){
-
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let error = document.getElementById("error");
@@ -31,7 +30,6 @@ function logout(){
 
 /* BALANCE TOGGLE */
 function toggleBalance(){
-
     let balance = document.getElementById("balance");
     let eye = document.querySelector(".eye-btn i");
 
@@ -49,98 +47,42 @@ function notify(){
     alert("New transaction received!");
 }
 
-
 /* =========================
-   TRANSACTIONS ENGINE
+   TRANSACTIONS FIXED SYSTEM
 ========================= */
 
 function updateRecentTransactions(){
 
+    let history = JSON.parse(localStorage.getItem("history")) || [];
     let container = document.getElementById("recentTransactions");
+
     if(!container) return;
 
-    container.innerHTML = "";
+    container.innerHTML = ""; // IMPORTANT FIX
 
-    let history = JSON.parse(localStorage.getItem("history")) || [];
+    history.slice(0, 10).forEach(tx => {
 
-    // Fallback sample if empty
-    if(history.length === 0){
+        let sign =
+            (tx.type === "Withdrawal" || tx.type === "Transfer") ? "-" : "+";
 
-        history = [
-            {type:"Deposit", amount:50000000, time:"Today • 09:12 AM"},
-            {type:"Withdrawal", amount:500, time:"Today • 10:35 AM"},
-            {type:"Transfer", amount:2500, time:"Today • 02:45 PM"}
-        ];
-    }
+        let colorClass =
+            tx.type === "Deposit" ? "deposit" :
+            tx.type === "Withdrawal" ? "withdrawal" :
+            "transfer";
 
-    history.slice(0,10).forEach(tx => {
-
-        let sign = (tx.type === "Withdrawal" || tx.type === "Transfer") ? "-" : "+";
-
-        let div = document.createElement("div");
-        div.className = "tx";
-
-        div.innerHTML = `
-            <div>
-                <strong>${tx.type}</strong><br>
-                <small>${tx.time}</small>
+        container.innerHTML += `
+            <div class="tx ${colorClass}">
+                <div>
+                    <strong>${tx.type}</strong><br>
+                    <small>${tx.time}</small>
+                </div>
+                <b>${sign}$${Number(tx.amount).toLocaleString()}</b>
             </div>
-
-            <b>${sign}$${Number(tx.amount).toLocaleString()}</b>
         `;
-
-        container.appendChild(div);
     });
 }
 
-/* DEPOSIT */
-function submitDeposit(){
-
-    let amount = Number(document.getElementById("amount").value);
-
-    if(amount <= 0) return;
-
-    currentBalance += amount;
-    localStorage.setItem("balance", currentBalance);
-
-    let history = JSON.parse(localStorage.getItem("history")) || [];
-
-    history.unshift({
-        type:"Deposit",
-        amount:amount,
-        time:new Date().toLocaleString()
-    });
-
-    localStorage.setItem("history", JSON.stringify(history));
-
-    updateRecentTransactions();
-}
-
-/* TRANSFER */
-function confirmTransfer(){
-
-    let amount = Number(document.getElementById("amount").value);
-    let account = document.getElementById("account").value;
-
-    currentBalance -= amount;
-    localStorage.setItem("balance", currentBalance);
-
-    let history = JSON.parse(localStorage.getItem("history")) || [];
-
-    history.unshift({
-        type:"Transfer",
-        amount:amount,
-        account:account,
-        time:new Date().toLocaleString()
-    });
-
-    localStorage.setItem("history", JSON.stringify(history));
-
-    updateRecentTransactions();
-}
-
-
-/* LOAD ON START */
+/* RUN ON LOAD */
 window.onload = function(){
     checkAuth();
     updateRecentTransactions();
