@@ -104,7 +104,12 @@ button:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:10px 0;
+    margin-bottom:10px;
+}
+
+.topbar h2{
+    font-size:32px;
+    font-weight:800;
 }
 
 /* ======================
@@ -114,14 +119,14 @@ button:hover{
 .card{
     background:linear-gradient(135deg,#0a6b3e,#14b86a);
     color:white;
-    padding:24px;
-    border-radius:28px;
+    padding:22px;
+    border-radius:30px;
     margin:12px 0;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 #balance{
-    font-size:48px;
+    font-size:46px;
     font-weight:800;
     line-height:1.1;
 }
@@ -134,14 +139,16 @@ button:hover{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:8px;
-    margin-top:10px;
+    margin-top:8px;
 }
 
 .grid a{
     background:white;
-    border-radius:18px;
-    padding:14px 8px;
-    min-height:100px;
+    min-height:95px;
+
+    padding:12px 5px;
+
+    border-radius:20px;
 
     display:flex;
     flex-direction:column;
@@ -153,16 +160,15 @@ button:hover{
     text-decoration:none;
     color:#111;
 
-    font-size:16px;
+    font-size:15px;
     font-weight:700;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .grid a i{
-    font-size:32px;
+    font-size:30px;
 }
-
 /* ======================
    TRANSACTIONS
 ====================== */
@@ -170,15 +176,15 @@ button:hover{
 .transactions{
     background:white;
     padding:18px;
-    border-radius:24px;
-    margin-top:14px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    border-radius:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 .tx{
     display:flex;
     justify-content:space-between;
-    padding:12px 0;
+    align-items:center;
+    padding:10px 0;
     border-bottom:1px solid #eee;
 }
 
@@ -304,4 +310,33 @@ small{
 
 body{
     font-size:17px;
+}
+.card,
+.grid,
+.transactions,
+.beneficiaries{
+    margin-top:12px;
+}
+body{
+    font-size:17px;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-weight:800;
+}
+
+strong{
+    font-weight:700;
+}
+
+p{
+    margin:3px 0;
+    line-height:1.2;
+}
+
+small{
+    font-size:13px;
 }
