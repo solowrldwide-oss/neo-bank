@@ -114,9 +114,9 @@ button:hover{
 .card{
     background:linear-gradient(135deg,#0a6b3e,#14b86a);
     color:white;
-    padding:30px;
-    border-radius:28px;
-    margin:20px 0;
+    padding:22px;
+    border-radius:24px;
+    margin:15px 0;
     box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
 
