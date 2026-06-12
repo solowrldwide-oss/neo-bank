@@ -428,3 +428,28 @@ function showBankLogo(){
         logo.style.display = "none";
     }
 }
+function updateRecentTransactions(){
+
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+
+    let recent = document.getElementById("recentTransactions");
+
+    if(!recent) return;
+
+    recent.innerHTML = "";
+
+    history.slice(0,5).forEach(tx => {
+
+        recent.innerHTML += `
+        
+        <div class="tx">
+            <div>
+                <strong>${tx.type}</strong><br>
+                <small>${tx.time}</small>
+            </div>
+            <b>$${tx.amount.toLocaleString()}</b>
+        </div>
+
+        `;
+    });
+}
