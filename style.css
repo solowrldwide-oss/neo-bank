@@ -121,8 +121,9 @@ button:hover{
 }
 
 #balance{
-    font-size:42px;
+    font-size:34px;
     font-weight:800;
+    line-height:1.1;
 }
 
 /* ======================
