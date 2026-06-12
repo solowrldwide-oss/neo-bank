@@ -11,11 +11,11 @@
     <h2>Withdraw Funds</h2>
 
     <input
-        type="number"
-        id="account"
-        placeholder="Account Number"
-        oninput="generateName()"
-    >
+type="text"
+id="account"
+placeholder="Account Number"
+oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10); generateName();"
+>
 
     <input
         type="text"
