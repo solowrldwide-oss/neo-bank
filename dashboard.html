@@ -57,7 +57,7 @@ checkAuth();
     <p>Total Balance</p>
 
     <div class="balance-row">
-        <h1 id="balance">$87,641,072.33</h1>
+        <h1 id="balance"></h1>
 
         <button class="eye-btn" onclick="toggleBalance()">
             👁
@@ -252,6 +252,19 @@ checkAuth();
 </div>
 <div id="popup" class="popup">Transaction Successful ✅</div>
 <script src="script.js"></script>
+<script>
+
+document.getElementById("balance").innerText =
+
+"$" +
+
+(Number(
+localStorage.getItem("balance")
+)||87641072.33)
+
+.toLocaleString();
+
+</script>
 
 </body>
 </html>
