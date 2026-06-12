@@ -440,26 +440,101 @@ function showBankLogo(){
 }
 function updateRecentTransactions(){
 
-    let history = JSON.parse(localStorage.getItem("history")) || [];
+    let history = JSON.parse(
+        localStorage.getItem("history")
+    ) || [];
 
-    let recent = document.getElementById("recentTransactions");
+    let recent =
+    document.getElementById(
+        "recentTransactions"
+    );
 
     if(!recent) return;
 
-    recent.innerHTML = "";
+    if(history.length === 0){
 
-    history.slice(0,5).forEach(tx => {
-
-        recent.innerHTML += `
+        recent.innerHTML = `
         
-        <div class="tx">
+        <div class="tx deposit">
             <div>
-                <strong>${tx.type}</strong><br>
-                <small>${tx.time}</small>
+                <strong>Cash Deposit</strong><br>
+                <small>Today • 09:12 AM • Completed</small>
             </div>
-            <b>$${tx.amount.toLocaleString()}</b>
+            <b>+$50,000,000.00</b>
+        </div>
+
+        <div class="tx withdrawal">
+            <div>
+                <strong>ATM Withdrawal</strong><br>
+                <small>Today • 10:35 AM • Completed</small>
+            </div>
+            <b>-$500.00</b>
+        </div>
+
+        <div class="tx transfer">
+            <div>
+                <strong>Transfer</strong><br>
+                <small>2:45 PM • Completed</small>
+            </div>
+            <b>-$2,500.00</b>
+        </div>
+
+        <div class="tx deposit">
+            <div>
+                <strong>Wire Transfer Received</strong><br>
+                <small>Today • 12:45 PM • Completed</small>
+            </div>
+            <b>+$15,500.00</b>
         </div>
 
         `;
+        return;
+    }
+
+    recent.innerHTML = "";
+
+    history.forEach(tx=>{
+
+        let sign = "+";
+
+        if(
+            tx.type==="Transfer" ||
+            tx.type==="Withdrawal"
+        ){
+            sign="-";
+        }
+
+        recent.innerHTML += `
+
+        <div class="tx">
+
+            <div>
+
+                <strong>${tx.type}</strong><br>
+
+                <small>
+                ${tx.time}
+                </small>
+
+            </div>
+
+            <b>
+            ${sign}$${Number(tx.amount)
+            .toLocaleString()}
+            </b>
+
+        </div>
+
+        `;
+
     });
+
 }
+window.onload = function(){
+
+    checkAuth();
+
+    updateRecentTransactions();
+
+}
+localStorage.removeItem("history");
