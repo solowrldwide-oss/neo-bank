@@ -6,9 +6,6 @@ body{
     margin:0;
     font-family:'Poppins', Arial, sans-serif;
     background:#f4f6f8;
-    max-width:430px;
-    margin-left:auto;
-    margin-right:auto;
 }
 
 /* ======================
@@ -240,5 +237,19 @@ button:hover{
 
     #balance{
         font-size:36px;
+    }
+}
+@media (max-width:768px){
+
+    .layout{
+        flex-direction:column;
+    }
+
+    .main{
+        padding:15px;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
     }
 }
