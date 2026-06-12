@@ -9,7 +9,6 @@ function login(){
        password === "Incredibleman"){
 
         localStorage.setItem("neoUser", email);
-
         window.location.href = "dashboard.html";
 
     } else {
@@ -17,7 +16,9 @@ function login(){
         error.innerText = "Invalid credentials";
 
     }
+
 }
+
 
 /* CHECK AUTH */
 function checkAuth(){
@@ -30,6 +31,7 @@ function checkAuth(){
 
 }
 
+
 /* LOGOUT */
 function logout(){
 
@@ -38,24 +40,34 @@ function logout(){
 
 }
 
+
 /* BALANCE TOGGLE */
 function toggleBalance(){
 
     const balance = document.getElementById("balance");
 
     if(balance.innerText === "$250,000,000.00"){
+
         balance.innerText = "**************";
+
     } else {
+
         balance.innerText = "$250,000,000.00";
+
     }
 
 }
+
 
 /* NOTIFICATION */
 function notify(){
 
     alert("New transaction received!");
 
+}
+
+
+/* GENERATE RECIPIENT NAME */
 function generateName(){
 
     let names = [
@@ -76,18 +88,20 @@ function generateName(){
     if(account.length >= 10){
 
         let randomName =
-            names[Math.floor(Math.random() * names.length)];
+        names[Math.floor(Math.random() * names.length)];
 
         document.getElementById("name").value = randomName;
 
-    }else{
+    } else {
 
         document.getElementById("name").value = "";
 
     }
+
 }
 
 
+/* WITHDRAW FUNCTION */
 function submitWithdraw(){
 
     let account = document.getElementById("account").value;
@@ -97,7 +111,7 @@ function submitWithdraw(){
 
         alert("Please fill all fields");
 
-    }else{
+    } else {
 
         document.getElementById("message").innerHTML =
         "✅ Withdrawal Successful";
