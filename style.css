@@ -255,3 +255,23 @@ button:hover{
         grid-template-columns:repeat(2,1fr);
     }
 }
+h1,
+h2,
+h3,
+h4{
+    font-weight:800;
+}
+.card,
+.transactions,
+.beneficiaries,
+.grid a{
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+p,small{
+    line-height:1.3;
+}
+
+.tx strong{
+    font-size:15px;
+}
