@@ -10,15 +10,61 @@
 <div class="page">
 
 <h2>Transaction History</h2>
+<input
+type="text"
+id="search"
+placeholder="Search Transactions..."
+onkeyup="searchHistory()">
+<div id="historyList"></div>
 
-<input placeholder="Amount">
-<input placeholder="Account Number">
-
-<button>Submit Deposit</button>
+<button>Search</button>
 
 <a href="dashboard.html">Back</a>
 
 </div>
+<script>
 
+let history =
+JSON.parse(
+localStorage.getItem("history")
+) || [];
+
+let output = "";
+
+history.forEach(function(tx){
+
+output +=
+
+`
+
+<div class="tx">
+
+<div>
+
+<strong>${tx.type}</strong>
+
+<br>
+
+<small>${tx.time}</small>
+
+</div>
+
+<b>
+
+$${tx.amount.toLocaleString()}
+
+</b>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"historyList"
+).innerHTML = output;
+
+</script>
 </body>
 </html>
