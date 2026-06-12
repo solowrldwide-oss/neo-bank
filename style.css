@@ -265,18 +265,38 @@ button:hover{
 ====================== */
 
 .transactions{
+
     background:white;
-    padding:18px;
-    border-radius:25px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    padding:20px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
 }
 
 .tx{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:10px 0;
-    border-bottom:1px solid #eee;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #f1f5f9;
+
+    transition:.3s;
+
+}
+
+.tx:hover{
+
+    transform:translateX(5px);
+
 }
 
 .tx:last-child{
@@ -528,4 +548,54 @@ color:#ea580c;
 
 .eye-btn i{
     font-size:18px;
+}
+.deposit b{
+    color:#22c55e;
+}
+
+.withdrawal b{
+    color:#ef4444;
+}
+
+.transfer b{
+    color:#2563eb;
+}
+.tx small{
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+}
+.tx strong{
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+.tx{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
 }
