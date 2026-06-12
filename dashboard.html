@@ -2,38 +2,37 @@
 <html>
 <head>
     <title>NEO BANK Dashboard</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body>
-<script>
-checkAuth();
-</script>
+<body onload="checkAuth()">
+
 <div class="layout">
 
     <!-- SIDEBAR -->
     <div class="sidebar" id="sidebar">
 
-    <div class="sidebar-logo">
+        <div class="sidebar-logo">
 
-    <div class="bank-logo">
-        <i class="fa-solid fa-building-columns"></i>
+            <div class="bank-logo">
+                <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <h2>NEO BANK</h2>
+
+        </div>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="deposit.html">Deposit</a>
+        <a href="withdraw.html">Withdraw</a>
+        <a href="transfer.html">Transfer</a>
+        <a href="history.html">History</a>
+
     </div>
-
-    <h2>NEO BANK</h2>
-
-</div>
-
-    <a href="dashboard.html">Dashboard</a>
-    <a href="deposit.html">Deposit</a>
-    <a href="withdraw.html">Withdraw</a>
-    <a href="transfer.html">Transfer</a>
-    <a href="history.html">History</a>
-
-</div>
 
     <!-- MAIN -->
     <div class="main">
@@ -41,227 +40,263 @@ checkAuth();
         <!-- TOP BAR -->
         <div class="topbar">
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-<button onclick="logout()">Logout</button>
-    <h3>Welcome Back</h3>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <div class="top-icons">
-        <button onclick="toggleDark()">🌙</button>
-        <button onclick="notify()">🔔</button>
-    </div>
+            <h3>Welcome Back</h3>
 
-</div>
+            <div class="top-icons">
+                <button onclick="toggleDark()">🌙</button>
+                <button onclick="notify()">🔔</button>
+                <button onclick="logout()">Logout</button>
+            </div>
 
-        <!-- BALANCE CARD --><div class="card">
+        </div>
 
-    <p>Total Balance</p>
+        <!-- BALANCE CARD -->
+        <div class="card">
 
-    <div class="balance-row">
-        <h1 id="balance"></h1>
+            <p>Total Balance</p>
 
-        <button class="eye-btn" onclick="toggleBalance()">
-            👁
-        </button>
-    </div>
+            <div class="balance-row">
 
-    <p class="account-number">
-        Account: 7963064085
-    </p>
+                <h1 id="balance"></h1>
 
-    <button class="copy-btn">
-        Copy Account Number
-    </button>
+                <button class="eye-btn" onclick="toggleBalance()">
+                    👁
+                </button>
 
-</div>
+            </div>
+
+            <p class="account-number">
+                Account: 7963064085
+            </p>
+
+            <button class="copy-btn">
+                Copy Account Number
+            </button>
+
+        </div>
 
         <!-- QUICK ACTIONS -->
         <h3>Quick Actions</h3>
 
-<div class="grid">
+        <div class="grid">
 
-    <a href="deposit.html">
-        <i class="fa-solid fa-money-bill-transfer"></i>
-        <span>Deposit</span>
-    </a>
+            <a href="deposit.html">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                <span>Deposit</span>
+            </a>
 
-    <a href="withdraw.html">
-        <i class="fa-solid fa-arrow-up"></i>
-        <span>Withdraw</span>
-    </a>
+            <a href="withdraw.html">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span>Withdraw</span>
+            </a>
 
-    <a href="transfer.html">
-        <i class="fa-solid fa-paper-plane"></i>
-        <span>Transfer</span>
-    </a>
+            <a href="transfer.html">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Transfer</span>
+            </a>
 
-    <a href="history.html">
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        <span>History</span>
-    </a>
+            <a href="history.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </a>
 
-    <a href="#">
-        <i class="fa-solid fa-credit-card"></i>
-        <span>Cards</span>
-    </a>
+            <a href="#">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Cards</span>
+            </a>
 
-    <a href="#">
-        <i class="fa-solid fa-file-invoice-dollar"></i>
-        <span>Bills</span>
-    </a>
+            <a href="#">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Bills</span>
+            </a>
 
-    <a href="#">
-        <i class="fa-brands fa-bitcoin"></i>
-        <span>Crypto</span>
-    </a>
+            <a href="#">
+                <i class="fa-brands fa-bitcoin"></i>
+                <span>Crypto</span>
+            </a>
 
-    <a href="#">
-        <i class="fa-solid fa-building-columns"></i>
-        <span>Check Deposit</span>
-    </a>
+            <a href="#">
+                <i class="fa-solid fa-building-columns"></i>
+                <span>Check Deposit</span>
+            </a>
 
-</div>
+        </div>
+
+        <!-- RECENT BENEFICIARIES -->
+        <div class="beneficiaries">
+
+            <h3>Recent Beneficiaries</h3>
+
+            <div class="people">
+
+                <div class="person">
+                    MB
+                    <small>Michael Brown</small>
+                </div>
+
+                <div class="person">
+                    SW
+                    <small>Sophia Williams</small>
+                </div>
+
+                <div class="person">
+                    JA
+                    <small>James Anderson</small>
+                </div>
+
+                <div class="person">
+                    OJ
+                    <small>Olivia Johnson</small>
+                </div>
+
+            </div>
+
+        </div>
 
         <!-- TRANSACTIONS -->
         <h3>Recent Transactions</h3>
 
         <div class="transactions">
 
-    <div class="tx deposit">
-        <div>
-            <strong>Cash Deposit</strong><br>
-            <small>Today • 09:12 AM • Completed</small>
-        </div>
-        <b>+$50,000,000.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Cash Deposit</strong><br>
+                    <small>Today • 09:12 AM • Completed</small>
+                </div>
+                <b>+$50,000,000.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>ATM Withdrawal</strong><br>
-            <small>Today • 10:35 AM • Completed</small>
-        </div>
-        <b>-$500.00</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>ATM Withdrawal</strong><br>
+                    <small>Today • 10:35 AM • Completed</small>
+                </div>
+                <b>-$500.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Transfer to Michael Brown</strong><br>
-            <small>Today • 11:02 AM • Completed</small>
-        </div>
-        <b>-$1,200.00</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Transfer to Michael Brown</strong><br>
+                    <small>Today • 11:02 AM • Completed</small>
+                </div>
+                <b>-$1,200.00</b>
+            </div>
 
-    <div class="tx deposit">
-        <div>
-            <strong>Wire Transfer Received</strong><br>
-            <small>Today • 12:45 PM • Completed</small>
-        </div>
-        <b>+$15,500.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Wire Transfer Received</strong><br>
+                    <small>Today • 12:45 PM • Completed</small>
+                </div>
+                <b>+$15,500.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Electricity Bill Payment</strong><br>
-            <small>Today • 01:15 PM • Completed</small>
-        </div>
-        <b>-$320.00</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Electricity Bill Payment</strong><br>
+                    <small>Today • 01:15 PM • Completed</small>
+                </div>
+                <b>-$320.00</b>
+            </div>
 
-    <div class="tx deposit">
-        <div>
-            <strong>Salary Credit</strong><br>
-            <small>Yesterday • 08:00 AM • Completed</small>
-        </div>
-        <b>+$8,500.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Salary Credit</strong><br>
+                    <small>Yesterday • 08:00 AM • Completed</small>
+                </div>
+                <b>+$8,500.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Online Purchase</strong><br>
-            <small>Yesterday • 10:25 AM • Completed</small>
-        </div>
-        <b>-$89.99</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Online Purchase</strong><br>
+                    <small>Yesterday • 10:25 AM • Completed</small>
+                </div>
+                <b>-$89.99</b>
+            </div>
 
-    <div class="tx deposit">
-        <div>
-            <strong>International Transfer</strong><br>
-            <small>Yesterday • 02:10 PM • Completed</small>
-        </div>
-        <b>+$12,000.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>International Transfer</strong><br>
+                    <small>Yesterday • 02:10 PM • Completed</small>
+                </div>
+                <b>+$12,000.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Restaurant Payment</strong><br>
-            <small>Yesterday • 07:42 PM • Completed</small>
-        </div>
-        <b>-$145.50</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Restaurant Payment</strong><br>
+                    <small>Yesterday • 07:42 PM • Completed</small>
+                </div>
+                <b>-$145.50</b>
+            </div>
 
-    <div class="tx deposit">
-        <div>
-            <strong>Investment Return</strong><br>
-            <small>Jun 10 • 09:30 AM • Completed</small>
-        </div>
-        <b>+$3,250.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Investment Return</strong><br>
+                    <small>Jun 10 • 09:30 AM • Completed</small>
+                </div>
+                <b>+$3,250.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Netflix Subscription</strong><br>
-            <small>Jun 10 • 12:05 PM • Completed</small>
-        </div>
-        <b>-$15.99</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Netflix Subscription</strong><br>
+                    <small>Jun 10 • 12:05 PM • Completed</small>
+                </div>
+                <b>-$15.99</b>
+            </div>
 
-    <div class="tx deposit">
-        <div>
-            <strong>Business Payment Received</strong><br>
-            <small>Jun 09 • 03:40 PM • Completed</small>
-        </div>
-        <b>+$22,000.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Business Payment Received</strong><br>
+                    <small>Jun 09 • 03:40 PM • Completed</small>
+                </div>
+                <b>+$22,000.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Mobile Airtime</strong><br>
-            <small>Jun 09 • 05:10 PM • Completed</small>
-        </div>
-        <b>-$50.00</b>
-    </div>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Mobile Airtime</strong><br>
+                    <small>Jun 09 • 05:10 PM • Completed</small>
+                </div>
+                <b>-$50.00</b>
+            </div>
 
-    <div class="tx deposit">
-        <div>
-            <strong>Check Deposit</strong><br>
-            <small>Jun 08 • 11:20 AM • <span class="status-pending">Pending</span></small>
-        </div>
-        <b>+$5,000.00</b>
-    </div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Check Deposit</strong><br>
+                    <small>Jun 08 • 11:20 AM • Pending</small>
+                </div>
+                <b>+$5,000.00</b>
+            </div>
 
-    <div class="tx withdrawal">
-        <div>
-            <strong>Insurance Payment</strong><br>
-            <small>Jun 08 • 04:55 PM • Completed</small>
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Insurance Payment</strong><br>
+                    <small>Jun 08 • 04:55 PM • Completed</small>
+                </div>
+                <b>-$450.00</b>
+            </div>
+
         </div>
-        <b>-$450.00</b>
+
     </div>
 
 </div>
-    </div>
 
+<div id="popup" class="popup">
+    Transaction Successful ✅
 </div>
-<div id="popup" class="popup">Transaction Successful ✅</div>
+
 <script src="script.js"></script>
+
 <script>
 
 document.getElementById("balance").innerText =
-
 "$" +
-
-(Number(
-localStorage.getItem("balance")
-)||87641072.33)
-
+(Number(localStorage.getItem("balance")) || 87641072.33)
 .toLocaleString();
 
 </script>
