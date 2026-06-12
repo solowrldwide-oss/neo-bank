@@ -495,3 +495,35 @@ button:hover{
     }
 
 }
+.beneficiaries{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.people{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    margin-top:15px;
+}
+
+.person{
+    min-width:90px;
+    height:90px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0a6b3e,#13a35d);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.person small{
+    font-size:10px;
+    text-align:center;
+}
