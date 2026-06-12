@@ -121,14 +121,13 @@ button:hover{
     color:white;
     padding:22px;
     border-radius:30px;
-    margin:12px 0;
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
 #balance{
-    font-size:46px;
+    font-size:52px;
     font-weight:800;
-    line-height:1.1;
+    line-height:1;
 }
 
 /* ======================
@@ -139,16 +138,13 @@ button:hover{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:8px;
-    margin-top:8px;
 }
 
 .grid a{
     background:white;
-    min-height:95px;
-
-    padding:12px 5px;
-
     border-radius:20px;
+    padding:14px 8px;
+    min-height:100px;
 
     display:flex;
     flex-direction:column;
@@ -160,14 +156,14 @@ button:hover{
     text-decoration:none;
     color:#111;
 
-    font-size:15px;
+    font-size:16px;
     font-weight:700;
 
     box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
-
 .grid a i{
-    font-size:30px;
+    font-size:38px;
+    color:#0a6b3e;
 }
 /* ======================
    TRANSACTIONS
@@ -311,14 +307,23 @@ small{
 body{
     font-size:17px;
 }
-.card,
-.grid,
-.transactions,
+.card{
+    margin-bottom:12px;
+}
+
+.grid{
+    margin-top:8px;
+}
+
+.transactions{
+    margin-top:12px;
+}
+
 .beneficiaries{
     margin-top:12px;
 }
 body{
-    font-size:17px;
+    font-size:18px;
 }
 
 h1,
