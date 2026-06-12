@@ -157,7 +157,8 @@
 
         <!-- TRANSACTIONS -->
         <h3>Recent Transactions</h3>
-
+        <div id="recentTransactions"></div>
+        
         <div class="transactions">
 
             <div class="tx deposit">
@@ -300,6 +301,9 @@ document.getElementById("balance").innerText =
 .toLocaleString();
 
 </script>
-
+<script>
+updateRecentTransactions();
+</script>
+    
 </body>
 </html>
