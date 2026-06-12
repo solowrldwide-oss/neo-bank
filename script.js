@@ -170,3 +170,147 @@ function generateBank(){
     randomBank;
 
 }
+/* DEPOSIT FUNCTION */
+function submitDeposit(){
+
+    let account =
+    document.getElementById("account").value;
+
+    let amount =
+    Number(document.getElementById("amount").value);
+
+    if(account === "" || amount === 0){
+
+        alert("Please fill all fields");
+        return;
+
+    }
+
+    document.getElementById("loader").style.display =
+    "flex";
+
+    setTimeout(function(){
+
+        currentBalance += amount;
+
+        localStorage.setItem(
+            "balance",
+            currentBalance
+        );
+
+        let txId =
+        "TX" + Math.floor(
+            Math.random()*1000000000
+        );
+
+        let history =
+        JSON.parse(
+            localStorage.getItem("history")
+        ) || [];
+
+        history.unshift({
+
+            type:"Deposit",
+
+            amount:amount,
+
+            txId:txId,
+
+            time:new Date().toLocaleString()
+
+        });
+
+        localStorage.setItem(
+            "history",
+            JSON.stringify(history)
+        );
+
+        document.getElementById("loader").style.display =
+        "none";
+
+        document.getElementById("message").innerHTML =
+
+        "✅ Deposit Successful<br><br>" +
+
+        "Transaction ID:<br>" +
+
+        txId;
+
+    },3000);
+
+}
+function submitTransfer(){
+
+    let account =
+    document.getElementById("account").value;
+
+    let amount =
+    Number(document.getElementById("amount").value);
+
+    if(account === "" || amount === 0){
+
+        alert("Please fill all fields");
+        return;
+
+    }
+
+    if(amount > currentBalance){
+
+        alert("Insufficient Funds");
+        return;
+
+    }
+
+    document.getElementById("loader").style.display =
+    "flex";
+
+    setTimeout(function(){
+
+        currentBalance -= amount;
+
+        localStorage.setItem(
+            "balance",
+            currentBalance
+        );
+
+        let txId =
+        "TX" + Math.floor(
+            Math.random()*1000000000
+        );
+
+        let history =
+        JSON.parse(
+            localStorage.getItem("history")
+        ) || [];
+
+        history.unshift({
+
+            type:"Transfer",
+
+            amount:amount,
+
+            txId:txId,
+
+            time:new Date().toLocaleString()
+
+        });
+
+        localStorage.setItem(
+            "history",
+            JSON.stringify(history)
+        );
+
+        document.getElementById("loader").style.display =
+        "none";
+
+        document.getElementById("message").innerHTML =
+
+        "✅ Transfer Successful<br><br>" +
+
+        "Transaction ID:<br>" +
+
+        txId;
+
+    },3000);
+
+}
