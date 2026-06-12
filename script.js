@@ -53,25 +53,28 @@ function notify(){
 
 function updateRecentTransactions(){
 
-    let history = JSON.parse(localStorage.getItem("history")) || [];
-    let container = document.getElementById("recentTransactions");
+    let history =
+    JSON.parse(localStorage.getItem("history")) || [];
+
+    let container =
+    document.getElementById("recentTransactions");
 
     if(!container) return;
 
-    container.innerHTML = ""; // IMPORTANT FIX
+    // CLEAR OLD CONTENT (VERY IMPORTANT FIX)
+    container.innerHTML = "";
 
-    history.slice(0, 10).forEach(tx => {
+    history.slice(0, 6).forEach(tx => {
+
+        let typeClass =
+        tx.type.toLowerCase();
 
         let sign =
-            (tx.type === "Withdrawal" || tx.type === "Transfer") ? "-" : "+";
-
-        let colorClass =
-            tx.type === "Deposit" ? "deposit" :
-            tx.type === "Withdrawal" ? "withdrawal" :
-            "transfer";
+        (tx.type === "Withdrawal" || tx.type === "Transfer")
+        ? "-" : "+";
 
         container.innerHTML += `
-            <div class="tx ${colorClass}">
+            <div class="tx ${typeClass}">
                 <div>
                     <strong>${tx.type}</strong><br>
                     <small>${tx.time}</small>
