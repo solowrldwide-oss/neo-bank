@@ -50,19 +50,29 @@ function logout(){
 }
 
 
-/* BALANCE TOGGLE */
 function toggleBalance(){
 
-    const balance = document.getElementById("balance");
+    let balance =
+    document.getElementById("balance");
+
+    let eye =
+    document.querySelector(".eye-btn i");
 
     if(balance.innerText.includes("*")){
 
         balance.innerText =
         "$" + currentBalance.toLocaleString();
 
-    } else {
+        eye.className =
+        "fa-solid fa-eye";
 
-        balance.innerText = "**************";
+    }else{
+
+        balance.innerText =
+        "************";
+
+        eye.className =
+        "fa-solid fa-eye-slash";
 
     }
 
