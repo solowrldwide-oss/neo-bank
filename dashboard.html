@@ -4,26 +4,22 @@
     <title>NEO BANK Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body onload="checkAuth()">
+<body>
 
 <div class="layout">
 
     <!-- SIDEBAR -->
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar">
 
         <div class="sidebar-logo">
-
             <div class="bank-logo">
                 <i class="fa-solid fa-building-columns"></i>
             </div>
-
             <h2>NEO BANK</h2>
-
         </div>
 
         <a href="dashboard.html">Dashboard</a>
@@ -37,19 +33,13 @@
     <!-- MAIN -->
     <div class="main">
 
-        <!-- TOP BAR -->
         <div class="topbar">
-
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
             <h3>Welcome Back</h3>
 
             <div class="top-icons">
-                <button onclick="toggleBalance()">👁</button>
                 <button onclick="notify()">🔔</button>
                 <button onclick="logout()">Logout</button>
             </div>
-
         </div>
 
         <!-- BALANCE CARD -->
@@ -58,25 +48,11 @@
             <p>Available Balance</p>
 
             <div class="balance-row">
-
                 <h1 id="balance">$87,641,072.33</h1>
 
                 <button class="eye-btn" onclick="toggleBalance()">
                     <i class="fa-solid fa-eye"></i>
                 </button>
-
-            </div>
-
-            <div class="account-number">
-                1234 •••• •••• 5678
-            </div>
-
-            <button class="copy-btn">
-                Copy Account Number
-            </button>
-
-            <div class="card-logo">
-                VISA
             </div>
 
         </div>
@@ -85,71 +61,27 @@
         <h3>Quick Actions</h3>
 
         <div class="grid">
-
-            <a href="deposit.html">
-                <i class="fa-solid fa-money-bill-transfer"></i>
-                <span>Deposit</span>
-            </a>
-
-            <a href="withdraw.html">
-                <i class="fa-solid fa-arrow-up"></i>
-                <span>Withdraw</span>
-            </a>
-
-            <a href="transfer.html">
-                <i class="fa-solid fa-paper-plane"></i>
-                <span>Transfer</span>
-            </a>
-
-            <a href="history.html">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <span>History</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-credit-card"></i>
-                <span>Cards</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                <span>Bills</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-brands fa-bitcoin"></i>
-                <span>Crypto</span>
-            </a>
-
-            <a href="#">
-                <i class="fa-solid fa-building-columns"></i>
-                <span>Check Deposit</span>
-            </a>
-
+            <a href="deposit.html"><i class="fa-solid fa-money-bill-transfer"></i><span>Deposit</span></a>
+            <a href="withdraw.html"><i class="fa-solid fa-arrow-up"></i><span>Withdraw</span></a>
+            <a href="transfer.html"><i class="fa-solid fa-paper-plane"></i><span>Transfer</span></a>
+            <a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i><span>History</span></a>
         </div>
 
-        <!-- TRANSACTIONS -->
+        <!-- TRANSACTIONS (ONLY THIS NOW) -->
         <h3>Recent Transactions</h3>
 
         <div class="transactions" id="recentTransactions">
-            <!-- JS will populate this -->
+            <!-- JS WILL FILL THIS -->
         </div>
 
     </div>
-
-</div>
-
-<div id="popup" class="popup">
-    Transaction Successful ✅
 </div>
 
 <script src="script.js"></script>
 
 <script>
 document.getElementById("balance").innerText =
-"$" +
-(Number(localStorage.getItem("balance")) || 87641072.33)
-.toLocaleString();
+"$" + (Number(localStorage.getItem("balance")) || 87641072.33).toLocaleString();
 </script>
 
 </body>
