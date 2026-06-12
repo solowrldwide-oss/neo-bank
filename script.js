@@ -5,13 +5,16 @@ function login(){
     let password = document.getElementById("password").value;
     let error = document.getElementById("error");
 
-    if(email === "thanerivers@gmail.com" &&
-       password === "Incredibleman"){
+    if(
+        email === "thanerivers@gmail.com" &&
+        password === "Incredibleman"
+    ){
 
         localStorage.setItem("neoUser", email);
+
         window.location.href = "dashboard.html";
 
-    } else {
+    }else{
 
         error.innerText = "Invalid credentials";
 
@@ -26,7 +29,9 @@ function checkAuth(){
     let user = localStorage.getItem("neoUser");
 
     if(!user){
+
         window.location.href = "index.html";
+
     }
 
 }
@@ -36,6 +41,7 @@ function checkAuth(){
 function logout(){
 
     localStorage.removeItem("neoUser");
+
     window.location.href = "index.html";
 
 }
@@ -50,9 +56,9 @@ function toggleBalance(){
 
         balance.innerText = "**************";
 
-    } else {
+    }else{
 
-        balance.innerText = "$87,641,072.33;
+        balance.innerText = "$87,641,072.33";
 
     }
 
@@ -92,7 +98,7 @@ function generateName(){
 
         document.getElementById("name").value = randomName;
 
-    } else {
+    }else{
 
         document.getElementById("name").value = "";
 
@@ -101,16 +107,18 @@ function generateName(){
 }
 
 
+/* WITHDRAW FUNCTION */
 function submitWithdraw(){
 
     let account = document.getElementById("account").value;
     let amount = Number(document.getElementById("amount").value);
 
-    let availableBalance = let availableBalance = 87641072.33;;
+    let availableBalance = 87641072.33;
 
-    if(account === "" || amount === ""){
+    if(account === "" || amount === 0){
 
         alert("Please fill all fields");
+
         return;
 
     }
@@ -118,21 +126,23 @@ function submitWithdraw(){
     if(amount > availableBalance){
 
         alert("Insufficient Funds");
+
         return;
 
     }
 
-    // show loading
+    // SHOW LOADER
     document.getElementById("loader").style.display = "flex";
 
     setTimeout(function(){
 
+        // HIDE LOADER
         document.getElementById("loader").style.display = "none";
 
+        // SUCCESS MESSAGE
         document.getElementById("message").innerHTML =
         "✅ Withdrawal Successful";
 
     },3000);
 
 }
-
