@@ -55,18 +55,18 @@ function toggleBalance(){
 
     const balance = document.getElementById("balance");
 
-    if(balance.innerText === "$87,641,072.33"){
+    if(balance.innerText.includes("*")){
+
+        balance.innerText =
+        "$" + currentBalance.toLocaleString();
+
+    } else {
 
         balance.innerText = "**************";
-
-    }else{
-
-        balance.innerText = "$87,641,072.33";
 
     }
 
 }
-
 
 /* NOTIFICATION */
 function notify(){
