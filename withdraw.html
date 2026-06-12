@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Deposit</title>
+    <title>Withdraw Funds</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="page">
 
-<h2>Withdraw Funds</h2>
+    <h2>Withdraw Funds</h2>
 
-<input placeholder="Amount">
-<input placeholder="Account Number">
+    <input
+        type="number"
+        id="account"
+        placeholder="Account Number"
+        oninput="generateName()"
+    >
 
-<button>Submit Deposit</button>
+    <input
+        type="text"
+        id="name"
+        placeholder="Recipient Name"
+        readonly
+    >
 
-<a href="dashboard.html">Back</a>
+    <input
+        type="number"
+        id="amount"
+        placeholder="Amount"
+    >
+
+    <button onclick="submitWithdraw()">
+        Submit Withdrawal
+    </button>
+
+    <p id="message"></p>
+
+    <br>
+
+    <a href="dashboard.html">
+        Back to Dashboard
+    </a>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
