@@ -25,10 +25,11 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10); generateName()
     >
 
     <input
-        type="number"
-        id="amount"
-        placeholder="Amount"
-    >
+type="text"
+id="amount"
+placeholder="Amount"
+oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+>
 
     <button onclick="submitWithdraw()">
         Submit Withdrawal
