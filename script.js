@@ -239,40 +239,14 @@ function submitDeposit(){
     },3000);
 
 }
-function submitTransfer(){
+function confirmTransfer(){
 
-    let account =
-    document.getElementById("account").value;
+    closeConfirm();
 
-    let amount =
-    Number(document.getElementById("amount").value);
+    document.getElementById("loader").style.display = "flex";
 
-    let pin =
-    document.getElementById("pin").value;
-
-    if(account === "" || amount === 0 || pin === ""){
-
-        alert("Please fill all fields");
-        return;
-
-    }
-
-    if(pin !== "1234"){
-
-        alert("Incorrect PIN");
-        return;
-
-    }
-
-    if(amount > currentBalance){
-
-        alert("Insufficient Funds");
-        return;
-
-    }
-
-    document.getElementById("loader").style.display =
-    "flex";
+    let account = document.getElementById("account").value;
+    let amount = Number(document.getElementById("amount").value);
 
     setTimeout(function(){
 
@@ -280,36 +254,34 @@ function submitTransfer(){
 
         localStorage.setItem("balance", currentBalance);
 
-        let txId =
-        "TX" + Math.floor(Math.random()*1000000000);
+        let txId = "TX" + Math.floor(Math.random()*1000000000);
 
-        let history =
-        JSON.parse(localStorage.getItem("history")) || [];
+        let history = JSON.parse(localStorage.getItem("history")) || [];
 
         history.unshift({
-
             type:"Transfer",
             amount:amount,
             account:account,
             txId:txId,
             time:new Date().toLocaleString()
-
         });
 
         localStorage.setItem("history", JSON.stringify(history));
 
-        document.getElementById("loader").style.display =
-        "none";
+        document.getElementById("loader").style.display = "none";
 
-        document.getElementById("message").innerHTML =
+        document.getElementById("message").innerHTML = `
+        
+        <div class="checkmark">✔</div>
+        <h3>Transfer Successful</h3>
+        <p>${txId}</p>
+        
+        `;
 
-        "✅ Transfer Successful<br><br>" +
-        "Transaction ID:<br>" +
-        txId;
+        updateRecentTransactions();
 
-    },3000);
+    },2500);
 }
-
 function searchHistory(){
 
     let input =
