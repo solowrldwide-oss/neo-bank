@@ -245,8 +245,11 @@ button:hover{
     box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 .grid a i{
-    font-size:38px;
-    color:#0a6b3e;
+
+    font-size:36px;
+
+    transition:.3s;
+
 }
 /* ======================
    TRANSACTIONS
@@ -256,7 +259,7 @@ button:hover{
     background:white;
     padding:18px;
     border-radius:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .tx{
@@ -278,9 +281,9 @@ button:hover{
 .beneficiaries{
     background:white;
     padding:18px;
-    border-radius:20px;
+    border-radius:25px;
     margin-top:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
 .people{
@@ -427,4 +430,75 @@ p{
 
 small{
     font-size:13px;
+}
+.grid a:nth-child(1) i{
+color:#16a34a;
+}
+
+.grid a:nth-child(2) i{
+color:#2563eb;
+}
+
+.grid a:nth-child(3) i{
+color:#dc2626;
+}
+
+.grid a:nth-child(4) i{
+color:#f59e0b;
+}
+
+.grid a:nth-child(5) i{
+color:#7c3aed;
+}
+
+.grid a:nth-child(6) i{
+color:#ec4899;
+}
+
+.grid a:nth-child(7) i{
+color:#0891b2;
+}
+
+.grid a:nth-child(8) i{
+color:#ea580c;
+}
+.grid a{
+
+    transition:.3s;
+
+}
+
+.grid a:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.15);
+
+}
+.tx{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
 }
