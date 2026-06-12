@@ -537,4 +537,4 @@ window.onload = function(){
     updateRecentTransactions();
 
 }
-localStorage.removeItem("history");
+
