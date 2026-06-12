@@ -380,9 +380,10 @@ h2{
     font-weight:800;
 }
 
-h3{
-    font-size:28px;
-    font-weight:800;
+.transactions h3{
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:20px;
 }
 
 strong{
@@ -554,18 +555,13 @@ small{
     color:#2563eb;
 }
 .tx small{
-
     color:#94a3b8;
-
-    font-size:12px;
-
+    font-size:14px;
 }
 .tx strong{
-
-    font-size:16px;
-
-    font-weight:700;
-
+    font-size:18px;
+    font-weight:800;
+    color:#111827;
 }
 .tx{
 
@@ -591,4 +587,49 @@ small{
 
     }
 
+}
+.tx-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.tx-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.tx-icon i{
+    font-size:22px;
+}
+.transfer-icon{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+.deposit-icon{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+.withdraw-icon{
+    background:#fee2e2;
+    color:#dc2626;
+}
+.deposit b{
+    color:#16a34a;
+}
+
+.withdrawal b{
+    color:#dc2626;
+}
+
+.transfer b{
+    color:#2563eb;
 }
