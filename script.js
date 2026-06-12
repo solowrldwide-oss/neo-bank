@@ -453,3 +453,8 @@ function updateRecentTransactions(){
         `;
     });
 }
+// (your last function above)
+
+function updateRecentTransactions(){
+    ...
+}
