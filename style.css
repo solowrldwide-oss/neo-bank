@@ -555,13 +555,16 @@ small{
     color:#2563eb;
 }
 .tx small{
-    color:#94a3b8;
-    font-size:14px;
+    font-size:18px;
+    color:#6b7280;
+    font-weight:600;
+}
 }
 .tx strong{
-    font-size:18px;
-    font-weight:800;
+    font-size:23px;
+    font-weight:900;
     color:#111827;
+    letter-spacing:-0.3px;
 }
 .tx{
 
@@ -632,4 +635,7 @@ small{
 
 .transfer b{
     color:#2563eb;
+}
+.tx{
+    padding:20px 0;
 }
