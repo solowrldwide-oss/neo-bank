@@ -320,28 +320,35 @@ button:hover{
 .grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
-    gap:12px;
-    margin-top:15px;
+    gap:8px;
+    margin-top:10px;
 }
 .grid a{
     background:white;
-    border-radius:18px;
-    padding:14px 10px;
+    border-radius:16px;
+
+    padding:10px 6px;     /* smaller height */
+    min-height:75px;      /* compact tiles */
 
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
     text-decoration:none;
-    color:#111;
 
-    font-weight:700;
-    font-size:13px;
+    color:#111;
+    font-weight:900;      /* bolder text */
+
+    font-size:13px;       /* slightly smaller label but bold */
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:0.2s ease;
 }
 
 .grid a i{
-    font-size:28px;
+    font-size:40px;
     margin-bottom:6px;
 }
 .grid a:hover{
@@ -357,6 +364,10 @@ button:hover{
     font-size:38px;
     margin-bottom:6px;
 }
+
+.grid a span{
+    font-weight:900;
+    font-size:12px;
 
 }
 .grid a:nth-child(1) i{
@@ -627,16 +638,16 @@ button:hover{
 @media(max-width:768px){
     .grid{
         grid-template-columns:repeat(4, 1fr);
-        gap:10px;
+        gap:6px;
     }
 
     .grid a{
-        padding:10px 6px;
-        min-height:80px;
+        padding:8px 4px;
+        min-height:70px;
     }
 
     .grid a i{
-        font-size:32px;
+        font-size:34px;
     }
 
     .grid a span{
