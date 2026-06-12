@@ -456,11 +456,11 @@ button:hover{
 }
 .transactions h3{
 
-    font-size:32px;
+    font-size:42px;
 
     font-weight:900;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 .tx{
@@ -471,11 +471,9 @@ button:hover{
 
     align-items:center;
 
-    padding:22px 0;
+    padding:28px 0;
 
-    border-bottom:1px solid #f1f5f9;
-
-    transition:.3s;
+    border-bottom:1px solid #eef2f7;
 
 }
 .tx:hover{
@@ -597,3 +595,51 @@ button:hover{
 
 }
    
+/* ==================================
+   FINAL TRANSACTION TEXT UPGRADE
+================================== */
+
+.tx strong{
+
+    font-size:38px !important;
+
+    font-weight:900 !important;
+
+    color:#111827;
+
+    line-height:1.05;
+
+    display:block;
+
+    margin-bottom:6px;
+
+}
+
+.tx small{
+
+    font-size:20px !important;
+
+    font-weight:700;
+
+    color:#6b7280;
+
+}
+
+.tx b{
+
+    font-size:30px !important;
+
+    font-weight:900;
+
+}
+   .deposit b{
+    color:#16a34a;
+}
+
+.withdrawal b{
+    color:#ef4444;
+}
+
+.transfer b{
+    color:#2563eb;
+}
