@@ -46,13 +46,13 @@ function toggleBalance(){
 
     const balance = document.getElementById("balance");
 
-    if(balance.innerText === "$250,000,000.00"){
+    if(balance.innerText === "$87,641,072.33"){
 
         balance.innerText = "**************";
 
     } else {
 
-        balance.innerText = "$250,000,000.00";
+        balance.innerText = "$87,641,072.33;
 
     }
 
@@ -101,21 +101,38 @@ function generateName(){
 }
 
 
-/* WITHDRAW FUNCTION */
 function submitWithdraw(){
 
     let account = document.getElementById("account").value;
-    let amount = document.getElementById("amount").value;
+    let amount = Number(document.getElementById("amount").value);
+
+    let availableBalance = $87,641,072.33;
 
     if(account === "" || amount === ""){
 
         alert("Please fill all fields");
+        return;
 
-    } else {
+    }
+
+    if(amount > availableBalance){
+
+        alert("Insufficient Funds");
+        return;
+
+    }
+
+    // show loading
+    document.getElementById("loader").style.display = "flex";
+
+    setTimeout(function(){
+
+        document.getElementById("loader").style.display = "none";
 
         document.getElementById("message").innerHTML =
         "✅ Withdrawal Successful";
 
-    }
+    },3000);
 
 }
+
