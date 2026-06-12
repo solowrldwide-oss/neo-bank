@@ -1,57 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Withdraw Funds</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+function submitWithdraw(){
 
-<div class="page">
+    let account =
+    document.getElementById("account").value;
 
-    <h2>Withdraw Funds</h2>
+    let amount =
+    Number(document.getElementById("amount").value);
 
-    <input
-type="text"
-id="account"
-placeholder="Account Number"
-oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10); generateName();"
->
+    if(account === "" || amount === 0){
 
-    <input
-        type="text"
-        id="name"
-        placeholder="Recipient Name"
-        readonly
-    >
+        alert("Please fill all fields");
+        return;
 
-    <input
-type="text"
-id="amount"
-placeholder="Amount"
-oninput="this.value=this.value.replace(/[^0-9]/g,'')"
->
+    }
 
-    <button onclick="submitWithdraw()">
-        Submit Withdrawal
-    </button>
+    if(amount > currentBalance){
 
-    <p id="message"></p>
+        alert("Insufficient Funds");
+        return;
 
-    <br>
+    }
 
-    <a href="dashboard.html">
-        Back to Dashboard
-    </a>
+    document.getElementById("loader").style.display =
+    "flex";
 
-</div>
-<div id="loader" class="loader">
+    setTimeout(function(){
 
-    <div class="spinner"></div>
+        currentBalance -= amount;
 
-    <p>Processing Transaction...</p>
+        localStorage.setItem(
+            "balance",
+            currentBalance
+        );
 
-</div>
-<script src="script.js"></script>
+        // generate transaction id
+        let txId =
+        "TX" + Math.floor(
+            Math.random()*1000000000
+        );
 
-</body>
-</html>
+        // save history
+        let history =
+        JSON.parse(
+            localStorage.getItem("history")
+        ) || [];
+
+        history.unshift({
+
+            type:"Withdrawal",
+
+            amount:amount,
+
+            account:account,
+
+            txId:txId,
+
+            time:new Date().toLocaleString()
+
+        });
+
+        localStorage.setItem(
+            "history",
+            JSON.stringify(history)
+        );
+
+        document.getElementById("loader").style.display =
+        "none";
+
+        document.getElementById("message").innerHTML =
+
+        "✅ Withdrawal Successful<br><br>" +
+
+        "Transaction ID:<br>" +
+
+        txId;
+
+    },3000);
+
+}
