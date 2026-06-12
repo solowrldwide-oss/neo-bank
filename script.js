@@ -341,3 +341,32 @@ function searchHistory(){
     });
 
 }
+function generateTransferName(){
+
+    let names = [
+        "Michael Brown",
+        "Sophia Williams",
+        "James Anderson",
+        "Olivia Johnson",
+        "Daniel Smith",
+        "Emma Davis",
+        "Benjamin Wilson",
+        "Ava Martinez",
+        "Noah Thomas",
+        "Charlotte Taylor"
+    ];
+
+    let account =
+    document.getElementById("account").value;
+
+    if(account.length === 10){
+
+        document.getElementById("name").value =
+        names[Math.floor(Math.random()*names.length)];
+
+    } else {
+
+        document.getElementById("name").value = "";
+
+    }
+}
