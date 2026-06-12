@@ -387,3 +387,25 @@ button:hover{
     color:#f59e0b;
     font-weight:bold;
 }
+.logo-section{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo-circle{
+    width:90px;
+    height:90px;
+    background:linear-gradient(135deg,#0a6b3e,#13a35d);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.logo-circle i{
+    color:white;
+    font-size:40px;
+}
