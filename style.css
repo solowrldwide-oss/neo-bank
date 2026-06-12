@@ -154,7 +154,7 @@ button:hover{
 }
 
 .grid a i{
-    font-size:26px;
+    font-size:30px;
 }
 
 /* ======================
@@ -172,7 +172,7 @@ button:hover{
 .tx{
     display:flex;
     justify-content:space-between;
-    padding:14px 8px;
+    padding:10px 4px;
     border-bottom:1px solid #eee;
 }
 
@@ -199,8 +199,9 @@ button:hover{
 }
 
 .person{
-    min-width:80px;
-    height:80px;
+    min-width:65px;
+    height:65px;
+    font-size:13px;
     border-radius:50%;
     background:linear-gradient(135deg,#0a6b3e,#14b86a);
     color:white;
