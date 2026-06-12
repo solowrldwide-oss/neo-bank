@@ -71,16 +71,149 @@
         <h3>Recent Transactions</h3>
 
 <div class="transactions" id="recentTransactions">
+
 </div>
+
+            <div class="tx deposit">
+                <div>
+                    <strong>Cash Deposit</strong><br>
+                    <small>Today • 09:12 AM • Completed</small>
+                </div>
+                <b>+$50,000,000.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>ATM Withdrawal</strong><br>
+                    <small>Today • 10:35 AM • Completed</small>
+                </div>
+                <b>-$500.00</b>
+            </div>
+
+      <div class="tx transfer">
+    <div>
+        <strong>Transfer</strong><br>
+        <small>2:45 PM • Completed</small>
     </div>
+    <b>-$2,500.00</b>
+</div>
+            <div class="tx deposit">
+                <div>
+                    <strong>Wire Transfer Received</strong><br>
+                    <small>Today • 12:45 PM • Completed</small>
+                </div>
+                <b>+$15,500.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Electricity Bill Payment</strong><br>
+                    <small>Today • 01:15 PM • Completed</small>
+                </div>
+                <b>-$320.00</b>
+            </div>
+
+            <div class="tx deposit">
+                <div>
+                    <strong>Salary Credit</strong><br>
+                    <small>Yesterday • 08:00 AM • Completed</small>
+                </div>
+                <b>+$8,500.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Online Purchase</strong><br>
+                    <small>Yesterday • 10:25 AM • Completed</small>
+                </div>
+                <b>-$89.99</b>
+            </div>
+
+            <div class="tx deposit">
+                <div>
+                    <strong>International Transfer</strong><br>
+                    <small>Yesterday • 02:10 PM • Completed</small>
+                </div>
+                <b>+$12,000.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Restaurant Payment</strong><br>
+                    <small>Yesterday • 07:42 PM • Completed</small>
+                </div>
+                <b>-$145.50</b>
+            </div>
+
+            <div class="tx deposit">
+                <div>
+                    <strong>Investment Return</strong><br>
+                    <small>Jun 10 • 09:30 AM • Completed</small>
+                </div>
+                <b>+$3,250.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Netflix Subscription</strong><br>
+                    <small>Jun 10 • 12:05 PM • Completed</small>
+                </div>
+                <b>-$15.99</b>
+            </div>
+
+            <div class="tx deposit">
+                <div>
+                    <strong>Business Payment Received</strong><br>
+                    <small>Jun 09 • 03:40 PM • Completed</small>
+                </div>
+                <b>+$22,000.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Mobile Airtime</strong><br>
+                    <small>Jun 09 • 05:10 PM • Completed</small>
+                </div>
+                <b>-$50.00</b>
+            </div>
+
+            <div class="tx deposit">
+                <div>
+                    <strong>Check Deposit</strong><br>
+                    <small>Jun 08 • 11:20 AM • Pending</small>
+                </div>
+                <b>+$5,000.00</b>
+            </div>
+
+            <div class="tx withdrawal">
+                <div>
+                    <strong>Insurance Payment</strong><br>
+                    <small>Jun 08 • 04:55 PM • Completed</small>
+                </div>
+                <b>-$450.00</b>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="popup" class="popup">
+    Transaction Successful ✅
 </div>
 
 <script src="script.js"></script>
 
 <script>
-document.getElementById("balance").innerText =
-"$" + (Number(localStorage.getItem("balance")) || 87641072.33).toLocaleString();
-</script>
 
+document.getElementById("balance").innerText =
+"$" +
+(Number(localStorage.getItem("balance")) || 87641072.33)
+.toLocaleString();
+
+</script>
+ 
+    
 </body>
 </html>
