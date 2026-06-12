@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Deposit</title>
+    <title>Transfer Funds</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="page">
 
-<h2>Transfer Money</h2>
+    <h2>Transfer Money</h2>
 
-<input placeholder="Amount">
-<input placeholder="Account Number">
+    <input
+        type="text"
+        id="account"
+        placeholder="Recipient Account Number"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10); generateTransferName(); generateBank();"
+    >
 
-<button>Submit Deposit</button>
+    <input
+        type="text"
+        id="name"
+        placeholder="Recipient Name"
+        readonly
+    >
 
-<a href="dashboard.html">Back</a>
+    <input
+        type="text"
+        id="bank"
+        placeholder="Bank Name"
+        readonly
+    >
+
+    <input
+        type="text"
+        id="amount"
+        placeholder="Amount"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+    >
+
+    <input
+        type="password"
+        id="pin"
+        placeholder="4-digit PIN"
+        maxlength="4"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+    >
+
+    <button onclick="submitTransfer()">
+        Send Money
+    </button>
+
+    <p id="message"></p>
 
 </div>
+
+<div id="loader" class="loader">
+    <div class="spinner"></div>
+    <p>Processing Transfer...</p>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
