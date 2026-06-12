@@ -106,7 +106,7 @@ function submitWithdraw(){
     let account = document.getElementById("account").value;
     let amount = Number(document.getElementById("amount").value);
 
-    let availableBalance = $87,641,072.33;
+    let availableBalance = let availableBalance = 87641072.33;;
 
     if(account === "" || amount === ""){
 
