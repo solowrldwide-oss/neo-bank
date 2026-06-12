@@ -149,3 +149,24 @@ function submitWithdraw(){
     },3000);
 
 }
+function generateBank(){
+
+    let banks = [
+
+        "Bank of America",
+        "Chase Bank",
+        "Wells Fargo",
+        "Citibank",
+        "Capital One",
+        "PNC Bank",
+        "Truist Bank"
+
+    ];
+
+    let randomBank =
+    banks[Math.floor(Math.random()*banks.length)];
+
+    document.getElementById("bank").value =
+    randomBank;
+
+}
