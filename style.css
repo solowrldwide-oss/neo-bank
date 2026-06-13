@@ -323,13 +323,12 @@ button:hover{
     gap:10px;
     margin-top:12px;
 }
-..grid a{
+.grid a{
     background:white;
-    border-radius:18px;
+    border-radius:16px;
 
-    padding:18px 6px;
-
-    aspect-ratio: 1 / 1;   /* 🔥 makes it square */
+    width:85px;
+    height:85px;
 
     display:flex;
     flex-direction:column;
@@ -337,18 +336,17 @@ button:hover{
     align-items:center;
 
     text-decoration:none;
-
     color:#111;
-    font-weight:900;
 
+    font-weight:900;
     font-size:14px;
 
-    box-shadow:0 8px 18px rgba(0,0,0,.10);
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
 
-    transition:0.2s ease;
+    transition:.3s;
 }
 .grid a i{
-    font-size:48px;
+    font-size:45px;
     margin-bottom:8px;
 }
 .grid a:hover{
