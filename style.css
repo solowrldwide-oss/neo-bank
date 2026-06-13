@@ -247,21 +247,25 @@ button:hover{
     z-index:2;
 }
 
-.card-logo{
+..card-logo{
     position:absolute;
+    bottom:25px;
+    right:25px;
 
-    bottom:35px;
-    right:30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 
-    font-size:42px;
-
+    font-size:34px;
     font-weight:900;
-
-    color:white;
-
     letter-spacing:3px;
 
-    z-index:2;
+    color:white;
+}
+
+.card-logo i{
+    font-size:24px;
+    opacity:.8;
 }
 .eye-btn{
 
@@ -666,4 +670,9 @@ button:hover{
     font-size:24px;
     font-weight:700;
     margin-bottom:15px;
+}
+.balance-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
