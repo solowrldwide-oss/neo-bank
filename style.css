@@ -361,27 +361,27 @@ button:hover{
     font-size:10px;
 }
 /* ======================
-   QUICK ACTIONS (PERFECT SQUARE FIX)
+   QUICK ACTIONS (BALANCED PREMIUM)
 ====================== */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(2, 1fr); /* ALWAYS 2 columns */
-    gap:12px;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
 
     margin-top:12px;
 }
 
-/* PERFECT SQUARE TILE */
+/* SMALLER + CLEAN SQUARE TILES */
 .grid a{
 
     background:white;
 
     width:100%;
 
-    aspect-ratio:1 / 1;   /* KEY FIX → makes perfect square */
+    aspect-ratio:1 / 1;
 
-    border-radius:24px;
+    border-radius:20px;
 
     display:flex;
     flex-direction:column;
@@ -394,54 +394,58 @@ button:hover{
 
     font-weight:900;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    box-shadow:0 8px 18px rgba(0,0,0,.10);
 
-    transition:.25s;
+    transition:.2s;
 
-    padding:0; /* IMPORTANT: removes stretching */
+    padding:10px;
+
 }
 
-/* BIG CENTERED ICON */
+/* BIGGER ICONS (BUT NOT OVERPOWERING) */
 .grid a i{
 
-    font-size:60px;   /* BIGGER ICON */
+    font-size:48px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
 }
 
-/* LABEL */
+/* BETTER LABEL BALANCE */
 .grid a span{
 
-    font-size:15px;
+    font-size:14px;
 
     font-weight:900;
+
+    text-align:center;
+
+    line-height:1.1;
 
 }
 
 /* HOVER */
 .grid a:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-4px);
 
-    box-shadow:0 18px 35px rgba(0,0,0,.15);
+    box-shadow:0 14px 25px rgba(0,0,0,.15);
 
 }
 
 .grid a:hover i{
-    transform:scale(1.15) rotate(5deg);
+    transform:scale(1.1) rotate(4deg);
 }
 
-/* MOBILE SAFETY (still 2 columns but tighter spacing) */
+/* MOBILE TUNING */
 @media(max-width:768px){
 
     .grid{
-        grid-template-columns:repeat(2, 1fr);
-        gap:10px;
+        gap:8px;
     }
 
     .grid a i{
-        font-size:44px;
+        font-size:38px;
     }
 
     .grid a span{
