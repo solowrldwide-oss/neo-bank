@@ -212,11 +212,11 @@ button:hover{
 }
 #balance{
 
-    font-size:60px;
+    font-size:65px;
 
     font-weight:900;
 
-    letter-spacing:-3px;
+    letter-spacing:-1px;
 
     margin-top:15px;
 
@@ -238,9 +238,9 @@ button:hover{
 
 .account-number{
 
-    margin-top:18px;
+    margin-top:25px;
 
-    font-size:18px;
+    font-size:21px;
 
     opacity:.9;
 
@@ -299,11 +299,11 @@ button:hover{
 
     position:absolute;
 
-    bottom:20px;
+    bottom:25px;
 
     right:25px;
 
-    font-size:38px;
+    font-size:32px;
 
     font-weight:900;
 
@@ -644,4 +644,9 @@ button:hover{
     .grid a span{
         font-size:12px;
     }
+}
+.card p{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:15px;
 }
