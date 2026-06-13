@@ -163,6 +163,19 @@ button:hover{
 
     border-radius:18px;
 }
+.welcome-text h3{
+    font-size:32px;
+    font-weight:900;
+    margin:0;
+    color:#111827;
+}
+
+.welcome-text p{
+    font-size:18px;
+    font-weight:600;
+    color:#6b7280;
+    margin-top:4px;
+}
 
 /* ======================
    PREMIUM BALANCE CARD
