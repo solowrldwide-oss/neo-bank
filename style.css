@@ -361,27 +361,30 @@ button:hover{
     font-size:10px;
 }
 /* ======================
-   QUICK ACTIONS (BALANCED PREMIUM)
+   QUICK ACTIONS (RESTORED 4 COLUMNS)
 ====================== */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+
+    /* RESTORE ORIGINAL 4 COLUMNS */
+    grid-template-columns:repeat(4, 1fr);
+
     gap:10px;
 
     margin-top:12px;
 }
 
-/* SMALLER + CLEAN SQUARE TILES */
+/* TILE DESIGN (SMALLER + CLEAN) */
 .grid a{
 
     background:white;
 
     width:100%;
 
-    aspect-ratio:1 / 1;
+    aspect-ratio:1 / 1;   /* keeps square */
 
-    border-radius:20px;
+    border-radius:18px;
 
     display:flex;
     flex-direction:column;
@@ -398,23 +401,23 @@ button:hover{
 
     transition:.2s;
 
-    padding:10px;
+    padding:8px;
 
 }
 
-/* BIGGER ICONS (BUT NOT OVERPOWERING) */
+/* ICON SIZE (BALANCED, NOT HUGE) */
 .grid a i{
 
-    font-size:48px;
+    font-size:40px;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
 
 }
 
-/* BETTER LABEL BALANCE */
+/* TEXT SIZE (BOLD BUT FITS) */
 .grid a span{
 
-    font-size:14px;
+    font-size:12px;
 
     font-weight:900;
 
@@ -424,7 +427,7 @@ button:hover{
 
 }
 
-/* HOVER */
+/* HOVER EFFECT */
 .grid a:hover{
 
     transform:translateY(-4px);
@@ -434,22 +437,23 @@ button:hover{
 }
 
 .grid a:hover i{
-    transform:scale(1.1) rotate(4deg);
+    transform:scale(1.08) rotate(4deg);
 }
 
-/* MOBILE TUNING */
+/* MOBILE ONLY → 2 COLUMNS */
 @media(max-width:768px){
 
     .grid{
-        gap:8px;
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
     }
 
     .grid a i{
-        font-size:38px;
+        font-size:36px;
     }
 
     .grid a span{
-        font-size:12px;
+        font-size:11px;
     }
 }
 /* ======================
