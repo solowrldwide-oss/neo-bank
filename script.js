@@ -87,6 +87,12 @@ function updateRecentTransactions(){
 
 /* RUN ON LOAD */
 window.onload = function(){
-    checkAuth();
-    updateRecentTransactions();
+
+    if(document.getElementById("recentTransactions")){
+
+        checkAuth();
+        updateRecentTransactions();
+
+    }
+
 };
