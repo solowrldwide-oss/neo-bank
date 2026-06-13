@@ -359,25 +359,27 @@ button:hover{
 
 .copy-btn i{
     font-size:10px;
-}
-/* ======================
-   QUICK ACTIONS (FINAL FIX)
+}/* ======================
+   QUICK ACTIONS (FIXED GRID)
 ====================== */
 
 .grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
-    gap:10px;
+    gap:12px;
+
     margin-top:12px;
 }
 
-/* TILE */
+/* SQUARE TILE DESIGN */
 .grid a{
-    background:white;
-    width:100%;
-    aspect-ratio:1 / 1;
 
-    border-radius:18px;
+    background:white;
+
+    width:100%;
+    aspect-ratio:1 / 1;   /* makes perfect square */
+
+    border-radius:22px;
 
     display:flex;
     flex-direction:column;
@@ -385,37 +387,53 @@ button:hover{
     align-items:center;
 
     text-decoration:none;
+
     color:#111;
 
     font-weight:900;
 
-    box-shadow:0 8px 18px rgba(0,0,0,.10);
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
 
-    transition:.2s;
+    transition:.25s;
 
-    padding:6px;
 }
 
-/* ICON → SMALLER (FIX YOU ASKED FOR) */
+/* BIG ICONS */
 .grid a i{
-    font-size:32px;   /* 🔥 reduced */
-    margin-bottom:6px;
+
+    font-size:52px;
+
+    margin-bottom:10px;
+
+    transition:.25s;
+
 }
 
-/* TEXT */
+/* LABEL TEXT */
 .grid a span{
-    font-size:12px;
+
+    font-size:14px;
+
     font-weight:900;
-    text-align:center;
+
 }
 
-/* HOVER */
+/* HOVER EFFECT */
 .grid a:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 22px rgba(0,0,0,.14);
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
 }
 
-/* ICON COLORS (RESTORED) */
+.grid a:hover i{
+
+    transform:scale(1.15) rotate(6deg);
+
+}
+
+/* ICON COLORS */
 .grid a:nth-child(1) i{ color:#16a34a; }
 .grid a:nth-child(2) i{ color:#2563eb; }
 .grid a:nth-child(3) i{ color:#ef4444; }
@@ -425,19 +443,19 @@ button:hover{
 .grid a:nth-child(7) i{ color:#0891b2; }
 .grid a:nth-child(8) i{ color:#ea580c; }
 
-/* MOBILE */
+/* MOBILE ADJUSTMENT */
 @media(max-width:768px){
     .grid{
         grid-template-columns:repeat(2, 1fr);
-        gap:8px;
+        gap:10px;
     }
 
     .grid a i{
-        font-size:28px;
+        font-size:40px;
     }
 
     .grid a span{
-        font-size:11px;
+        font-size:12px;
     }
 }
 /* ======================
