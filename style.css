@@ -361,28 +361,21 @@ button:hover{
     font-size:10px;
 }
 /* ======================
-   QUICK ACTIONS (RESTORED 4 COLUMNS)
+   QUICK ACTIONS (FINAL FIX)
 ====================== */
 
 .grid{
     display:grid;
-
-    /* RESTORE ORIGINAL 4 COLUMNS */
     grid-template-columns:repeat(4, 1fr);
-
     gap:10px;
-
     margin-top:12px;
 }
 
-/* TILE DESIGN (SMALLER + CLEAN) */
+/* TILE */
 .grid a{
-
     background:white;
-
     width:100%;
-
-    aspect-ratio:1 / 1;   /* keeps square */
+    aspect-ratio:1 / 1;
 
     border-radius:18px;
 
@@ -392,7 +385,6 @@ button:hover{
     align-items:center;
 
     text-decoration:none;
-
     color:#111;
 
     font-weight:900;
@@ -401,55 +393,47 @@ button:hover{
 
     transition:.2s;
 
-    padding:8px;
-
+    padding:6px;
 }
 
-/* ICON SIZE (BALANCED, NOT HUGE) */
+/* ICON → SMALLER (FIX YOU ASKED FOR) */
 .grid a i{
-
-    font-size:40px;
-
-    margin-bottom:8px;
-
+    font-size:32px;   /* 🔥 reduced */
+    margin-bottom:6px;
 }
 
-/* TEXT SIZE (BOLD BUT FITS) */
+/* TEXT */
 .grid a span{
-
     font-size:12px;
-
     font-weight:900;
-
     text-align:center;
-
-    line-height:1.1;
-
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .grid a:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 14px 25px rgba(0,0,0,.15);
-
+    transform:translateY(-3px);
+    box-shadow:0 12px 22px rgba(0,0,0,.14);
 }
 
-.grid a:hover i{
-    transform:scale(1.08) rotate(4deg);
-}
+/* ICON COLORS (RESTORED) */
+.grid a:nth-child(1) i{ color:#16a34a; }
+.grid a:nth-child(2) i{ color:#2563eb; }
+.grid a:nth-child(3) i{ color:#ef4444; }
+.grid a:nth-child(4) i{ color:#f59e0b; }
+.grid a:nth-child(5) i{ color:#8b5cf6; }
+.grid a:nth-child(6) i{ color:#ec4899; }
+.grid a:nth-child(7) i{ color:#0891b2; }
+.grid a:nth-child(8) i{ color:#ea580c; }
 
-/* MOBILE ONLY → 2 COLUMNS */
+/* MOBILE */
 @media(max-width:768px){
-
     .grid{
         grid-template-columns:repeat(2, 1fr);
-        gap:10px;
+        gap:8px;
     }
 
     .grid a i{
-        font-size:36px;
+        font-size:28px;
     }
 
     .grid a span{
