@@ -8,21 +8,7 @@
     box-sizing:border-box;
 }
 
-body{
 
-    margin:0;
-
-    font-family:'Poppins',sans-serif;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #0a6b3e,
-        #16c172
-    );
-
-}
 
 /* ======================
    LOGIN
