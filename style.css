@@ -836,3 +836,14 @@ button:hover{
     justify-content:space-between;
     align-items:center;
 }
+.dashboard-page{
+    background:
+    linear-gradient(
+        180deg,
+        #f7fafc 0%,
+        #eef6f1 50%,
+        #f4f6f8 100%
+    );
+
+    min-height:100vh;
+}
