@@ -459,202 +459,99 @@ button:hover{
     }
 }
 /* ======================
-   RECENT TRANSACTIONS
+   RECENT TRANSACTIONS (CLEAN FIX)
 ====================== */
 
 .transactions{
-
     background:white;
-
     padding:25px;
-
     border-radius:30px;
-
     margin-top:15px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
-.transactions h3{
 
-    font-size:42px;
-
-    font-weight:900;
-
-    margin-bottom:25px;
-
-}
+/* EACH TRANSACTION ROW */
 .tx{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
-    padding:28px 0;
+    padding:20px 0;
 
     border-bottom:1px solid #eef2f7;
 
+    transition:.2s;
 }
+
 .tx:hover{
-
-    transform:translateX(8px);
-
+    transform:translateX(6px);
 }
+
+/* LEFT SIDE (ICON + TEXT) */
 .tx-left{
-
     display:flex;
-
     align-items:center;
-
-    gap:18px;
-
+    gap:15px;
 }
+
+/* ICON */
 .tx-icon{
-
-    width:65px;
-
-    height:65px;
-
+    width:55px;
+    height:55px;
     border-radius:50%;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
 }
+
 .tx-icon i{
-
-    font-size:28px;
-
+    font-size:22px;
 }
+
+/* ICON COLORS */
 .deposit-icon{
-
     background:#dcfce7;
-
     color:#16a34a;
-
 }
 
 .withdraw-icon{
-
     background:#fee2e2;
-
     color:#ef4444;
-
 }
 
 .transfer-icon{
-
     background:#dbeafe;
-
     color:#2563eb;
-
 }
+
+/* ======================
+   TEXT SIZES (IMPORTANT FIX)
+====================== */
+
+/* TRANSACTION TYPE (MAIN TEXT) */
 .tx strong{
-
-    font-size:34px !important;
-
-    font-weight:900 !important;
-
-    color:#111827;
-
-    line-height:.tx small{
-
-    font-size:18px !important;
-
-    font-weight:700;
-
-    color:#6b7280;
-
-}
-.tx b{
-
-    font-size:28px;
-
+    font-size:32px;
     font-weight:900;
-
-}
- .deposit b{
-    color:#16a34a;
-}
-
-.withdrawal b{
-    color:#ef4444;
-}
-
-.transfer b{
-    color:#2563eb;
-}
-
-.tx{
-
-    animation:fadeUp .5s ease;
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-   
-/* ==================================
-   FINAL TRANSACTION TEXT UPGRADE
-================================== */
-
-.tx strong{
-
-    font-size:38px !important;
-
-    font-weight:900 !important;
-
     color:#111827;
-
-    line-height:1.05;
-
     display:block;
-
-    margin-bottom:6px;
-
 }
 
+/* STATUS + TIME (SMALL ONLY) */
 .tx small{
-
-    font-size:20px !important;
-
-    font-weight:700;
-
+    font-size:16px;
+    font-weight:600;
     color:#6b7280;
-
 }
 
+/* AMOUNT (MATCH TYPE SIZE AS REQUESTED) */
 .tx b{
-
-    font-size:30px !important;
-
+    font-size:32px;
     font-weight:900;
-
 }
-   .deposit b{
+
+/* COLORS FOR AMOUNT */
+.deposit b{
     color:#16a34a;
 }
 
