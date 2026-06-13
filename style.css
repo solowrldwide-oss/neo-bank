@@ -68,6 +68,14 @@ body{
     font-weight:700;
 
 }
+.login-page{
+    background:
+    linear-gradient(
+        135deg,
+        #0a6b3e,
+        #16c172
+    );
+}
 
 input{
     width:100%;
