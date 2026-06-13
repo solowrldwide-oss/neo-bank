@@ -237,22 +237,32 @@ button:hover{
 }
 
 .account-number{
-    font-size:20px;
+    margin-top:30px;
+    font-size:22px;
     font-weight:700;
-    margin-top:20px;
     color:white;
-    display:block;
+    position:absolute;
+    left:30px;
+    bottom:85px;
+    z-index:2;
 }
 
 .card-logo{
-    font-size:28px;
-    font-weight:900;
-    color:white;
     position:absolute;
+
+    bottom:35px;
     right:30px;
-    bottom:25px;
-    display:block;
-} 
+
+    font-size:42px;
+
+    font-weight:900;
+
+    color:white;
+
+    letter-spacing:3px;
+
+    z-index:2;
+}
 .eye-btn{
 
     width:auto;
@@ -285,13 +295,13 @@ button:hover{
 
 }
 .copy-btn{
+    position:absolute;
+    left:30px;
+    bottom:25px;
 
     width:auto;
 
-    margin-top:20px;
-
     background:white;
-
     color:#0a6b3e;
 
     font-weight:900;
@@ -300,6 +310,7 @@ button:hover{
 
     border-radius:15px;
 
+    z-index:2;
 }
 .card-logo{
 
