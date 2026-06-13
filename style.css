@@ -132,34 +132,31 @@ button:hover{
 ====================== */
 
 .card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #0a6b3e,
-        #15b96c,
+        #16c172,
         #0a6b3e
     );
 
     background-size:300% 300%;
+    animation:gradientMove 8s infinite alternate;
 
     color:white;
 
-    padding:30px;
+    padding:35px 30px;      /* Bigger inside spacing */
 
     border-radius:35px;
 
-    min-height:220px;
+    min-height:280px;       /* Taller card */
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,.15);
+    0 15px 35px rgba(0,0,0,.18);
 
-    animation:gradientMove 8s infinite alternate;
+    position:relative;
+    overflow:hidden;
 
+    margin-bottom:18px;
 }
 
 /* Moving gradient */
