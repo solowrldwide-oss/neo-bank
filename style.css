@@ -171,12 +171,12 @@ button:hover{
 .sidebar a{
     color:white;
     text-decoration:none;
-    font-size:17px;
+    font-size:16px;
     font-weight:700;
 }
 
 /* ======================
-   TOP BAR
+   TOP BAR (BIGGER + CLEAN)
 ====================== */
 
 .topbar{
@@ -186,94 +186,52 @@ button:hover{
     margin-bottom:20px;
 }
 
-.topbar h2{
-    font-size:36px;
-    font-weight:900;
-}
 .topbar h3{
-    font-size:32px;
+    font-size:34px;
     font-weight:900;
     color:#111827;
-    margin:0;
 }
+
 .top-icons{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:14px;
 }
+
 .top-icons button{
-    width:65px;
-    height:65px;
+    width:75px;
+    height:75px;
 
     border:none;
     border-radius:20px;
 
     background:white;
 
-    font-size:32px;
+    font-size:34px;
     font-weight:900;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 
     cursor:pointer;
+
+    transition:.3s;
 }
+
+.top-icons button:hover{
+    transform:scale(1.05);
+}
+
+/* Logout button */
 .top-icons button:last-child{
     width:auto;
-
     padding:0 25px;
-
-    height:65px;
-
-    border:none;
-
-    border-radius:20px;
-
+    font-size:20px;
     background:#0a6b3e;
-
     color:white;
-
-    font-size:22px;
-
-    font-weight:900;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-    cursor:pointer;
-}
-.top-icons button:first-child{
-
-    width:65px;
-    height:65px;
-
-    border:none;
-
-    border-radius:20px;
-
-    background:white;
-
-    font-size:32px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
-
-    cursor:pointer;
-
-}
-.welcome-text h3{
-    font-size:32px;
-    font-weight:900;
-    margin:0;
-    color:#111827;
-}
-
-.welcome-text p{
-    font-size:18px;
-    font-weight:600;
-    color:#6b7280;
-    margin-top:4px;
 }
 
 /* ======================
-   PREMIUM BALANCE CARD
+   BALANCE CARD (FIXED LAYOUT)
 ====================== */
 
 .card{
@@ -289,207 +247,118 @@ button:hover{
 
     color:white;
 
-    padding:35px 30px;      /* Bigger inside spacing */
+    padding:35px 30px;
 
     border-radius:35px;
 
-    min-height:350px;       /* Taller card */
+    min-height:340px;
 
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.18);
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
 
     position:relative;
+
     overflow:hidden;
 
     margin-bottom:18px;
 }
 
-/* Moving gradient */
-
 @keyframes gradientMove{
-
-    from{
-        background-position:left;
-    }
-
-    to{
-        background-position:right;
-    }
-
+    from{background-position:left;}
+    to{background-position:right;}
 }
 
-/* Floating circles */
+/* FLOATING SHAPES */
+.card::before,
+.card::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+}
 
 .card::before{
-
-    content:"";
-
-    position:absolute;
-
     width:180px;
     height:180px;
-
-    border-radius:50%;
-
     background:rgba(255,255,255,.15);
-
     top:-70px;
     right:-40px;
-
 }
 
 .card::after{
-
-    content:"";
-
-    position:absolute;
-
     width:120px;
     height:120px;
-
-    border-radius:50%;
-
     background:rgba(255,255,255,.1);
-
     bottom:-40px;
     left:-20px;
-
 }
+
+/* BALANCE TEXT */
 #balance{
-
-    font-size:65px;
-
+    font-size:62px;
     font-weight:900;
-
+    margin-top:10px;
     letter-spacing:-1px;
-
-    margin-top:15px;
-
-    animation:pulse 2s infinite alternate;
-
 }
 
-@keyframes pulse{
-
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.03);
-    }
-
-}
-
+/* ACCOUNT NUMBER FIXED (NO OVERLAP) */
 .account-number{
-    margin-top:30px;
-    font-size:22px;
+    font-size:20px;
     font-weight:700;
-    color:gold;
-    position:absolute;
-    left:30px;
-    bottom:85px;
-    z-index:2;
+    margin-top:25px;
+    color:white;
 }
 
-..card-logo{
+/* VISA LOGO CLEAN */
+.card-logo{
     position:absolute;
-    bottom:25px;
     right:25px;
-
-    display:flex;
-    align-items:center;
-    gap:10px;
+    bottom:25px;
 
     font-size:34px;
     font-weight:900;
     letter-spacing:3px;
 
-    color:white;
+    opacity:.9;
 }
 
-.card-logo i{
-    font-size:24px;
-    opacity:.8;
-}
+/* EYE BUTTON */
 .eye-btn{
-
-    width:auto;
-
-    padding:12px 15px;
-
+    padding:12px 14px;
     border:none;
-
     border-radius:15px;
 
     background:rgba(255,255,255,.2);
-
     color:white;
 
-    backdrop-filter:blur(12px);
-
-    transition:.3s;
-
-}
-
-.eye-btn:hover{
-
-    transform:rotate(20deg);
-
+    cursor:pointer;
 }
 
 .eye-btn i{
-
-    font-size:24px;
-
+    font-size:22px;
 }
+
+/* COPY BUTTON SMALL */
 .copy-btn{
-
-    width:auto;
-
     display:inline-flex;
-
     align-items:center;
-
     gap:6px;
 
-    padding:8px 12px;
+    padding:7px 10px;
+    margin-top:12px;
 
-    margin-top:15px;
-
-    background:rgba(255,255,255,.2);
-
-    color:white;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-size:13px;
-
+    font-size:11px;
     font-weight:700;
 
-    backdrop-filter:blur(10px
+    border:none;
+    border-radius:10px;
+
+    background:rgba(255,255,255,.2);
+    color:white;
+
+    backdrop-filter:blur(10px);
+}
 
 .copy-btn i{
-
     font-size:10px;
-
-}
-.card-logo{
-
-    position:absolute;
-
-    bottom:25px;
-
-    right:25px;
-
-    font-size:32px;
-
-    font-weight:900;
-
-    opacity:.9;
-
 }
 /* ======================
    QUICK ACTIONS
