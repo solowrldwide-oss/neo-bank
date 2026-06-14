@@ -144,102 +144,55 @@ document.getElementById("confirmBox").style.display="none";
 
 
 
-function confirmTransfer(){
+function makeTransfer(){
 
-let account =
-document.getElementById("account").value;
+let account = document.getElementById("account").value;
+let name = document.getElementById("name").value;
+let bank = document.getElementById("bank").value;
+let amount = Number(document.getElementById("amount").value);
+let pin = document.getElementById("pin").value;
 
-let name =
-document.getElementById("name").value;
+let message = document.getElementById("message");
 
-let bank =
-document.getElementById("bank").value;
-
-let amount =
-Number(document.getElementById("amount").value);
-
-let pin =
-document.getElementById("pin").value;
-
-
-
-let message =
-document.getElementById("message");
-
-
-
-if(pin !== "1234"){
-
-message.innerHTML =
-"Incorrect PIN";
-
+if(!account || !name || !bank || !amount || !pin){
+message.innerHTML = "Fill all fields";
 return;
-
 }
 
+if(pin !== "1234"){
+message.innerHTML = "Wrong PIN";
+return;
+}
 
+// show loader
+document.getElementById("loader").style.display = "flex";
 
+setTimeout(() => {
 
-closeConfirm();
+document.getElementById("loader").style.display = "none";
 
-
-
-document.getElementById("loader").style.display="flex";
-
-
-
-setTimeout(()=>{
-
-
-document.getElementById("loader").style.display="none";
-
-
-
-// SAVE FAILED TRANSFER
-
-let transactions =
-JSON.parse(localStorage.getItem("transactions"))
-|| [];
-
-
+// save FAILED transaction ONLY
+let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
 transactions.unshift({
-
-type:"Transfer",
-
-name:name,
-
-bank:bank,
-
-account:account,
-
-amount:amount,
-
-status:"Declined",
-
-date:new Date().toLocaleString()
-
+type: "Transfer",
+name: name,
+bank: bank,
+account: account,
+amount: amount,
+status: "Declined",
+date: new Date().toLocaleString()
 });
 
+localStorage.setItem("transactions", JSON.stringify(transactions));
 
+message.style.color = "red";
+message.innerHTML = "Transfer Declined ❌";
 
-localStorage.setItem(
-"transactions",
-JSON.stringify(transactions)
-);
+setTimeout(() => {
+window.location.href = "dashboard.html";
+}, 1500);
 
-
-
-
-message.style.color="red";
-
-message.innerHTML =
-"Transfer Declined ❌";
-
-
-
-},2500);
-
-
+}, 2000);
 
 }
