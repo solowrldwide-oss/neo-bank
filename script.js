@@ -144,34 +144,66 @@ document.getElementById("confirmBox").style.display="none";
 
 
 
-function makeTransfer(){
+function openReview(){
 
 let account = document.getElementById("account").value;
 let name = document.getElementById("name").value;
 let bank = document.getElementById("bank").value;
-let amount = Number(document.getElementById("amount").value);
-let pin = document.getElementById("pin").value;
+let amount = document.getElementById("amount").value;
 
-let message = document.getElementById("message");
-
-if(!account || !name || !bank || !amount || !pin){
-message.innerHTML = "Fill all fields";
+if(!account || !name || !bank || !amount){
+alert("Fill all fields");
 return;
 }
 
-if(pin !== "1234"){
-message.innerHTML = "Wrong PIN";
-return;
+document.getElementById("reviewDetails").innerHTML =
+`
+<strong>Recipient:</strong> ${name}<br>
+<strong>Bank:</strong> ${bank}<br>
+<strong>Account:</strong> ${account}<br>
+<strong>Amount:</strong> $${amount}
+`;
+
+document.getElementById("reviewPopup").style.display = "flex";
+
 }
 
-// show loader
-document.getElementById("loader").style.display = "flex";
+function closeReview(){
+document.getElementById("reviewPopup").style.display = "none";
+}
 
+function startProcessing(){
+
+closeReview();
+
+document.getElementById("statusPopup").style.display = "flex";
+
+// fake processing delay
 setTimeout(() => {
 
-document.getElementById("loader").style.display = "none";
+document.getElementById("statusTitle").innerText =
+"❌ Transfer Declined";
 
-// save FAILED transaction ONLY
+document.getElementById("statusText").innerText =
+"Security system blocked this transaction";
+
+saveDeclinedTransaction();
+
+setTimeout(() => {
+window.location.href = "dashboard.html";
+}, 1500);
+
+}, 2500);
+
+}
+
+function saveDeclinedTransaction(){
+
+let account = document.getElementById("account").value;
+let name = document.getElementById("name").value;
+let bank = document.getElementById("bank").value;
+let amount = document.getElementById("amount").value;
+
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
 transactions.unshift({
@@ -185,14 +217,5 @@ date: new Date().toLocaleString()
 });
 
 localStorage.setItem("transactions", JSON.stringify(transactions));
-
-message.style.color = "red";
-message.innerHTML = "Transfer Declined ❌";
-
-setTimeout(() => {
-window.location.href = "dashboard.html";
-}, 1500);
-
-}, 2000);
 
 }
