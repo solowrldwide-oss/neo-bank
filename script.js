@@ -96,3 +96,150 @@ window.onload = function(){
     }
 
 };
+function openConfirm(){
+
+let name =
+document.getElementById("name").value;
+
+let amount =
+document.getElementById("amount").value;
+
+let bank =
+document.getElementById("bank").value;
+
+
+if(!name || !amount){
+
+document.getElementById("message").innerHTML =
+"Please fill transfer details";
+
+return;
+
+}
+
+
+
+document.getElementById("confirmText").innerHTML =
+
+`Send $${Number(amount).toLocaleString()} to 
+<br>
+<strong>${name}</strong>
+<br>
+${bank}?`;
+
+
+
+document.getElementById("confirmBox").style.display="flex";
+
+}
+
+
+
+function closeConfirm(){
+
+document.getElementById("confirmBox").style.display="none";
+
+}
+
+
+
+
+function confirmTransfer(){
+
+let account =
+document.getElementById("account").value;
+
+let name =
+document.getElementById("name").value;
+
+let bank =
+document.getElementById("bank").value;
+
+let amount =
+Number(document.getElementById("amount").value);
+
+let pin =
+document.getElementById("pin").value;
+
+
+
+let message =
+document.getElementById("message");
+
+
+
+if(pin !== "1234"){
+
+message.innerHTML =
+"Incorrect PIN";
+
+return;
+
+}
+
+
+
+
+closeConfirm();
+
+
+
+document.getElementById("loader").style.display="flex";
+
+
+
+setTimeout(()=>{
+
+
+document.getElementById("loader").style.display="none";
+
+
+
+// SAVE FAILED TRANSFER
+
+let transactions =
+JSON.parse(localStorage.getItem("transactions"))
+|| [];
+
+
+
+transactions.unshift({
+
+type:"Transfer",
+
+name:name,
+
+bank:bank,
+
+account:account,
+
+amount:amount,
+
+status:"Declined",
+
+date:new Date().toLocaleString()
+
+});
+
+
+
+localStorage.setItem(
+"transactions",
+JSON.stringify(transactions)
+);
+
+
+
+
+message.style.color="red";
+
+message.innerHTML =
+"Transfer Declined ❌";
+
+
+
+},2500);
+
+
+
+}
