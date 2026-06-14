@@ -59,6 +59,27 @@
     <p>Processing Transfer...</p>
 </div>
 
+  <div id="reviewPopup" class="modal">
+  <div class="modal-content">
+    <h3>Review Transfer</h3>
+
+    <p id="reviewDetails"></p>
+
+    <button onclick="closeReview()">Cancel</button>
+    <button onclick="startProcessing()">Confirm Transfer</button>
+  </div>
+</div>
+
+    <div id="statusPopup" class="modal">
+  <div class="modal-content">
+    <h3 id="statusTitle">Processing...</h3>
+
+    <p id="statusText">Please wait while we verify your transfer</p>
+
+    <div class="spinner"></div>
+  </div>
+</div>
+
     
 <script src="script.js"></script>
 
